@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para mi amor, mi todo. ❤️</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #633d49;
+      background: #fff7f5;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 35px 20px;
+      background:
+        radial-gradient(circle at top left, #ffe1e9, transparent 45%),
+        linear-gradient(135deg, #fff7f5, #fce8ed);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font: 12px Arial, sans-serif;
+      color: #b76e83;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.08;
+      margin: 20px 0;
+      font-weight: normal;
+    }
+
+    .subtitle {
+      max-width: 470px;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 15px 25px;
+      margin: 12px 5px;
+      background: #c66d86;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      background: #a84f6b;
+    }
+
+    section { padding: 65px 20px; }
+
+    h2 {
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .section-note {
+      color: #98727c;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 22px;
+      max-width: 950px;
+      margin: 30px auto;
+    }
+
+    .photo-card {
+      background: white;
+      padding: 12px 12px 20px;
+      box-shadow: 0 8px 25px #79445314;
+      transform: rotate(-1deg);
+      transition: transform .25s;
+    }
+
+    .photo-card:nth-child(even) { transform: rotate(1deg); }
+
+    .photo-card:hover { transform: rotate(0) translateY(-5px); }
+
+    .photo-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: #f4dce3;
+      display: block;
+      cursor: pointer;
+    }
+
+    .caption { margin: 15px 5px 0; font-size: 17px; }
+
+    .letter-section { background: #fce8ed; }
+
+    .letter {
+      display: none;
+      max-width: 650px;
+      margin: 30px auto 0;
+      padding: 30px;
+      background: #fffaf7;
+      border-radius: 5px;
+      box-shadow: 0 10px 35px #79445312;
+      text-align: left;
+      line-height: 1.95;
+      font-size: 17px;
+      white-space: pre-line;
+    }
+
+    .letter.show { display: block; animation: appear .7s ease; }
+
+    .reason {
+      max-width: 550px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 25px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px #79445312;
+      font-size: 21px;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 35px 15px;
+      color: #a27682;
+      font-size: 14px;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      pointer-events: none;
+      z-index: 10;
+      animation: floatUp 3s ease-in forwards;
+    }
+
+    .photo-viewer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      background: #32151deF;
+      padding: 25px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .photo-viewer.open { display: flex; }
+
+    .photo-viewer img {
+      max-width: 90%;
+      max-height: 75vh;
+      object-fit: contain;
+      border: 8px solid white;
+    }
+
+    @keyframes floatUp {
+      to { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      section { padding: 48px 16px; }
+      .letter { padding: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <p class="eyebrow">A little something just for you</p>
+
+    <!-- CHANGE THIS TO HER NAME OR NICKNAME -->
+    <h1>Hey, My Love <span aria-hidden="true">♡</span></h1>
+
+    <p class="subtitle">
+      If I could give you one thing in life, it'd be for you to see how much and how brightly you shine in my life and how amazing 
+  you are
+    </p>
+
+    <button onclick="openSurprise()">Open your surprise 💌</button>
+    <p>Made with love, just for you.</p>
+  </header>
+
+  <section id="memories">
+    <p class="eyebrow">Us, in little moments</p>
+    <h2>Our little world 📸</h2>
+    <p class="section-note">
+       my favorite memories are the ones I get to share with you.
+    </p>
+
+    <div class="gallery">
+      <!-- Upload your photos into an "images" folder in GitHub.
+           Replace these filenames with your own photo filenames. -->
+
+      <div class="photo-card">
+        <img src="images/photo1.jpg" alt="A favorite photo of us"
+             onclick="viewPhoto(this)" onerror="this.style.visibility='hidden'">
+        <p class="caption">One of my favorite days ❤️</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="images/photo2.jpg" alt="A special memory together"
+             onclick="viewPhoto(this)" onerror="this.style.visibility='hidden'">
+        <p class="caption">Just you and me</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="images/photo3.jpg" alt="A happy moment together"
+             onclick="viewPhoto(this)" onerror="this.style.visibility='hidden'">
+        <p class="caption">My favorite person</p>
+      </div>
+    </div>
+    <p class="section-note">And so many more memories still to make. ♡</p>
+  </section>
+
+  <section class="letter-section" id="letter">
+    <p class="eyebrow">From my heart to yours</p>
+    <h2>A letter for you 💌</h2>
+    <p class="section-note">There's something I want you to know.</p>
+
+    <button onclick="toggleLetter()" id="letterButton">
+      Read your letter
+    </button>
+
+    <div class="letter" id="loveLetter">To my favorite person,
+
+I just want you to know how much you mean to me. You make ordinary moments feel special, and you give me so many reasons to smile.
+
+Thank you for being you, for the memories we've made, and for all the little things you do that mean more to me than you know.
+
+If I could choose again, I'd still want to get to know you, laugh with you, and make a thousand more memories with you.
+
+You are so special to me, and I hope I can make you feel as loved as you make me feel.
+
+With all my love,
+Your person ❤️</div>
+  </section>
+
+  <section>
+    <p class="eyebrow">In case you ever forget</p>
+    <h2>Reasons I love you</h2>
+    <p class="section-note">Here's just one of the many reasons.</p>
+
+    <div class="reason" id="reason">
+      The way you make even an ordinary day feel special. ❤️
+    </div>
+
+    <button onclick="nextReason()">One more reason ♡</button>
+  </section>
+
+  <footer>
+    Made for you, with all my heart. ❤️
+    <p>Today, tomorrow, and in all the little moments in between.</p>
+  </footer>
+
+  <div class="photo-viewer" id="photoViewer"
+       onclick="closePhoto()" role="dialog" aria-label="Photo viewer">
+    <img id="largePhoto" src="" alt="Enlarged memory">
+    <p style="color:white">Tap anywhere to close ✕</p>
+  </div>
+
+  <script>
+    // PERSONALIZE THESE REASONS!
+    const reasons = [
+      "The way you make even an ordinary day feel special. ❤️",
+      "Your smile can make my whole day better.",
+      "I can be myself when I'm with you.",
+      "The little things you do that you might not even notice.",
+      "The memories we've made and all the ones still waiting for us.",
+      "Simply because you're you, and that's more than enough. 💗"
+    ];
+
+    let reasonIndex = 0;
+
+    function openSurprise() {
+      document.getElementById("memories").scrollIntoView({
+        behavior: "smooth"
+      });
+      hearts(16);
+    }
+
+    function toggleLetter() {
+      const letter = document.getElementById("loveLetter");
+      const button = document.getElementById("letterButton");
+      letter.classList.toggle("show");
+
+      const isOpen = letter.classList.contains("show");
+      button.textContent = isOpen ? "Close your letter ♡" : "Read your letter";
+
+      if (isOpen) {
+        letter.scrollIntoView({ behavior: "smooth", block: "center" });
+        hearts(12);
+      }
+    }
+
+    function nextReason() {
+      reasonIndex = (reasonIndex + 1) % reasons.length;
+      document.getElementById("reason").textContent = reasons[reasonIndex];
+      hearts(5);
+    }
+
+    function hearts(count) {
+      const symbols = ["❤️", "💗", "💕", "♡", "💖"];
+
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement("span");
+        heart.className = "heart";
+        heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (16 + Math.random() * 20) + "px";
+        heart.style.animationDuration = (2 + Math.random() * 2) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4200);
+      }
+    }
+
+    function viewPhoto(img) {
+      if (!img.complete || !img.naturalWidth) return;
+      document.getElementById("largePhoto").src = img.src;
+      document.getElementById("photoViewer").classList.add("open");
+    }
+
+    function closePhoto() {
+      document.getElementById("photoViewer").classList.remove("open");
+    }
+  </script>
+</body>
+</html>
