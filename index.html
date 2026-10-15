@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -443,31 +442,20 @@ footer {
                onerror="this.onerror=null; this.alt='Add your photo at images/photo3.jpg'; this.style.opacity='.15';">
           <p class="photo-caption">Just us, just right ✨</p>
         </div>
-      
-<div class="gallery">
 
-    <!-- Your existing photo card 1 -->
-    <!-- Your existing photo card 2 -->
-    <!-- Your existing photo card 3 -->
-
-    <!-- ADD THE TWO NEW CARDS HERE -->
-    <div class="photo-card">
-        <img src="images/photo4.jpg" alt="A special memory together">
-        <div class="photo-caption">
-            <h3>My Favorite Memory ❤️</h3>
-            <p>Every moment with you is special.</p>
+        <div class="photo-card">
+          <img src="images/photo4.jpg" alt="A special memory together"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo4.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">My Favorite Memory ❤️</p>
         </div>
-    </div>
 
-    <div class="photo-card">
-        <img src="images/photo5.jpg" alt="My beautiful love">
-        <div class="photo-caption">
-            <h3>My Beautiful Love 🌙</h3>
-            <p>You make my world brighter, MI Amor.</p>
+        <div class="photo-card">
+          <img src="images/photo5.jpg" alt="My beautiful love"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo5.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">My Beautiful Love 🌙</p>
         </div>
-    </div>
-
-</div>
 
       </div>
     </div>
@@ -770,4 +758,3 @@ lovePhrases.forEach(phrase => {
 </script>
 </body>
 </html>
-
