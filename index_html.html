@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090e24">
+<title>For Stacy, Mi Amor ♡</title>
+
+<style>
+:root {
+  --night: #090e24;
+  --blue: #151e42;
+  --lavender: #bba9ff;
+  --pink: #ffb8d2;
+  --white: #fff8ff;
+  --muted: #c4c9e8;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 5px;
+}
+
+.stars, .stars::before, .stars::after {
+  position: fixed;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 80% 30%, #fff 50%, transparent 100%),
+    radial-gradient(2px 2px at 40% 70%, #c8c5ff 50%, transparent 100%),
+    radial-gradient(1px 1px at 60% 15%, #fff 50%, transparent 100%),
+    radial-gradient(2px 2px at 90% 80%, #ffcce2 50%, transparent 100%),
+    radial-gradient(1px 1px at 25% 50%, #fff 50%, transparent 100%);
+  background-size: 310px 290px;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+.stars::before {
+  background-size: 230px 240px;
+  opacity: .45;
+  transform: rotate(20deg);
+  animation-delay: -2s;
+}
+
+.stars::after {
+  background-size: 370px 330px;
+  opacity: .35;
+  animation-delay: -4s;
+}
+
+@keyframes twinkle {
+  from { opacity: .3; }
+  to { opacity: .9; }
+}
+
+main, footer, nav {
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 22px 15px;
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 34px);
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font: 12px Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+nav a:hover { color: var(--pink); }
+
+.hero {
+  min-height: 100svh;
+  padding: 110px 20px 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 35%, #252b5b99, transparent 60%);
+}
+
+.moon {
+  font-size: clamp(65px, 12vw, 105px);
+  filter: drop-shadow(0 0 28px #d5c5ff88);
+  animation: moonGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes moonGlow {
+  to { filter: drop-shadow(0 0 48px #e0d1ffcc); }
+}
+
+.eyebrow {
+  color: var(--pink);
+  font: 11px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1.8;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: clamp(42px, 9vw, 82px);
+  line-height: 1.12;
+  margin: 18px 0;
+  text-shadow: 0 0 35px #c1aaff55;
+}
+
+h1 span { color: var(--pink); }
+
+.subtitle {
+  max-width: 550px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.button {
+  border: 1px solid #c5b2ff99;
+  background: linear-gradient(135deg, #8873c8, #b76f9b);
+  color: white;
+  border-radius: 30px;
+  padding: 14px 23px;
+  margin: 12px 5px;
+  box-shadow: 0 0 25px #ac8bff22;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px #d5b7ff55;
+}
+
+.button.secondary {
+  background: #ffffff0a;
+  border-color: #ffffff55;
+}
+
+.scroll-note {
+  margin-top: 35px;
+  color: #9ca4cb;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+section {
+  padding: 85px 20px;
+  scroll-margin-top: 35px;
+}
+
+.section-inner {
+  max-width: 950px;
+  margin: auto;
+}
+
+h2 {
+  font-size: clamp(31px, 5vw, 46px);
+  font-weight: normal;
+  margin: 14px 0;
+}
+
+.description {
+  max-width: 600px;
+  margin: 0 auto 35px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.soft-section {
+  background: linear-gradient(180deg, #121833cc, #181733dd, #10152cdd);
+  border-top: 1px solid #ffffff0b;
+  border-bottom: 1px solid #ffffff0b;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 24px;
+  margin-top: 35px;
+}
+
+.photo-card {
+  padding: 11px 11px 20px;
+  background: #ffffff0d;
+  border: 1px solid #ffffff1d;
+  border-radius: 7px;
+  box-shadow: 0 12px 35px #00000025;
+  transition: transform .25s, border-color .25s;
+}
+
+.photo-card:hover {
+  transform: translateY(-6px) rotate(0);
+  border-color: #d9b9ff88;
+}
+
+.photo-card:nth-child(odd) { transform: rotate(-1deg); }
+.photo-card:nth-child(even) { transform: rotate(1deg); }
+.photo-card:nth-child(odd):hover,
+.photo-card:nth-child(even):hover { transform: translateY(-6px); }
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #25294b;
+  border-radius: 3px;
+  cursor: zoom-in;
+}
+
+.photo-caption {
+  margin: 15px 4px 0;
+  color: #ffe1ee;
+  font-size: 17px;
+}
+
+.letter-card {
+  max-width: 690px;
+  margin: 30px auto;
+  padding: clamp(23px, 5vw, 45px);
+  border: 1px solid #d8c5ff44;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #202344ee, #17172fee);
+  box-shadow: 0 15px 55px #00000030;
+  text-align: left;
+  line-height: 2;
+  color: #f0eaff;
+}
+
+.letter-card p { margin: 0 0 17px; }
+
+.hidden { display: none; }
+
+.love-languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 820px;
+  margin: 30px auto;
+}
+
+.love-word {
+  padding: 9px 13px;
+  border-radius: 25px;
+  border: 1px solid #c9b2ff3b;
+  background: #ffffff08;
+  color: #f5d9ed;
+  font-size: 14px;
+  transition: background .2s, transform .2s;
+}
+
+.love-word:hover {
+  background: #a38bda33;
+  transform: translateY(-2px);
+}
+
+.reason-box {
+  max-width: 620px;
+  min-height: 155px;
+  padding: 30px 20px;
+  margin: 25px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbb3ff44;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #202647, #28203e);
+  color: #ffe0ed;
+  font-size: clamp(19px, 3vw, 25px);
+  line-height: 1.8;
+  box-shadow: 0 10px 35px #00000022;
+}
+
+.reason-count {
+  color: #aab2d7;
+  font: 12px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.final-note {
+  padding: 90px 20px;
+  background: radial-gradient(ellipse at center, #3a285477, transparent 70%);
+}
+
+.final-note .big-heart {
+  font-size: 54px;
+  color: var(--pink);
+  filter: drop-shadow(0 0 20px #ffabc966);
+}
+
+footer {
+  padding: 30px 15px;
+  border-top: 1px solid #ffffff10;
+  color: #9da5c8;
+  font: 12px Arial, sans-serif;
+  line-height: 2;
+}
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  z-index: 10;
+  animation: floatUp 4s ease-in forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-115vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+.viewer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: #050716f5;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.viewer.open { display: flex; }
+
+.viewer img {
+  max-width: 92%;
+  max-height: 78vh;
+  object-fit: contain;
+  border: 5px solid #ffffffdd;
+  border-radius: 3px;
+}
+
+.viewer button { margin-top: 15px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<nav aria-label="Main navigation">
+  <a href="#memories">OUR MEMORIES</a>
+  <a href="#letter">YOUR LETTER</a>
+  <a href="#reasons">WHY I LOVE YOU</a>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="moon" aria-hidden="true">☾</div>
+    <p class="eyebrow">For the girl who has my heart</p>
+
+    <h1>Stacy Puello<br><span>Flores ♡</span></h1>
+
+    <p class="subtitle">
+      Mi Amor, if I could gather every star in the universe,
+      there aren't enough stars to show you how much you mean to me.
+    </p>
+
+    <p style="color:#e3caff; font-size:20px;">You are my favorite kind of magic.</p>
+
+    <button class="button" onclick="startSurprise()">
+      Open your little universe ✨
+    </button>
+
+    <button class="button secondary" onclick="toggleMusic()" id="musicButton">
+      ♫ Play our music
+    </button>
+
+    <p class="scroll-note">MADE WITH LOVE, JUST FOR YOU ↓</p>
+  </header>
+
+  <section class="soft-section" id="memories">
+    <div class="section-inner">
+      <p class="eyebrow">Little pieces of forever</p>
+      <h2>Our universe 📸</h2>
+      <p class="description">
+        Out of all the people, places, and moments in this huge universe,
+        I'm grateful for the memories I get to share with you.
+        Replace these pictures with our favorite moments.
+      </p>
+
+      <div class="gallery">
+        <div class="photo-card">
+          <img src="images/photo1.jpg" alt="Our first favorite memory"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo1.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">A memory I'll always keep ♡</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/photo2.jpg" alt="A special moment together"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo2.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">My favorite person 🌙</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/photo3.jpg" alt="A happy day together"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo3.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">Just us, just right ✨</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/photo4.jpg" alt="A special memory together"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo4.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">My Favorite Memory ❤️</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/photo5.jpg" alt="My beautiful love"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo5.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">My Beautiful Love 🌙</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="letter">
+    <div class="section-inner">
+      <p class="eyebrow">A little secret from my heart</p>
+      <h2>A letter for Mi Amor 💌</h2>
+      <p class="description">
+        Some feelings are too big for a text message.
+        Tap below when you're ready.
+      </p>
+
+      <button class="button" id="letterButton" onclick="toggleLetter()">
+        Open your letter ♡
+      </button>
+
+      <article class="letter-card hidden" id="loveLetter">
+        <p>To my beautiful Stacy, my Mi Amor,</p>
+
+        <p>
+          I made this little place in the universe for you because I wanted
+          you to have something that reminds you how loved you are.
+          It doesn't have to be a special day for me to celebrate you.
+          Loving you is already a reason.
+        </p>
+
+        <p>
+          If you ever have a hard day, I hope you remember that you matter
+          so much. If you ever doubt how special you are, I hope this page
+          reminds you that the world is brighter with you in it.
+        </p>
+
+        <p>
+          I wish I could put every feeling I have for you into words.
+          Since one language isn't enough, I filled this page with ways
+          people say those three little words around the world.
+          But no matter how many ways I say it, the feeling is still mine
+          and it is meant for you.
+        </p>
+
+        <p>
+          Thank you for being Stacy. Thank you for being my Mi Amor.
+          I hope we keep making memories, laughing together, learning
+          about each other, and finding new reasons to choose one another.
+        </p>
+
+        <p>
+        I just love you, and I wanted you to know. ❤️
+        </p>
+
+        <p>Always sending you love,</p>
+        <p style="color:#ffb8d2;">Your person Francis ✨</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="soft-section" id="languages">
+    <div class="section-inner">
+      <p class="eyebrow">One feeling, so many words</p>
+      <h2>I love you, Mi Amor 🌎</h2>
+      <p class="description">
+        I could say it in a hundred different ways, but every one of them
+        is here for the same person: you, Stacy.
+      </p>
+
+      <div class="love-languages" id="loveWords"></div>
+
+      <p style="color:#ffb8d2; font-size:19px; line-height:1.8;">
+        Different words. One heart. You. ♡
+      </p>
+    </div>
+  </section>
+
+  <section id="reasons">
+    <div class="section-inner">
+      <p class="eyebrow">A little reminder, whenever you need it</p>
+      <h2>Reasons I love you 💗</h2>
+      <p class="description">
+        There are so many that I couldn't fit them all on one page.
+        Tap the button and let me remind you of another.
+      </p>
+
+      <div class="reason-box" id="reasonBox" aria-live="polite">
+        I love you because you are uniquely, beautifully you. ♡
+      </div>
+
+      <p class="reason-count" id="reasonCount">REASON 1</p>
+
+      <button class="button" onclick="nextReason()">
+        Give me another reason ✨
+      </button>
+    </div>
+  </section>
+
+  <section class="final-note">
+    <div class="big-heart" aria-hidden="true">♥</div>
+    <p class="eyebrow">To my Mi Amor</p>
+    <h2>Under this sky,<br>it's always you.</h2>
+    <p class="description">
+      Of all the stars I could look at, you're the one I want to keep
+      looking toward. Thank you for being part of my universe, Stacy.
+    </p>
+    <button class="button" onclick="hearts(35)">
+      A sky full of love for you ♡
+    </button>
+  </section>
+</main>
+
+<footer>
+  Made for Stacy Puello Flores, with love. 🌙
+  <br>Mi Amor, today and on all the ordinary days, too.
+</footer>
+
+<div class="viewer" id="viewer" role="dialog"
+     aria-modal="true" aria-label="Photo viewer"
+     onclick="closePhoto()">
+  <img id="largePhoto" src="" alt="A memory together">
+  <button class="button secondary">Close photo ✕</button>
+</div>
+
+<!-- Upload your own licensed MP3 file named music.mp3 to the repository root. -->
+<audio id="backgroundMusic" src="music.mp3" loop preload="none"></audio>
+
+<script>
+function startSurprise() {
+  document.getElementById("memories").scrollIntoView({ behavior: "smooth" });
+  hearts(18);
+}
+
+function toggleLetter() {
+  const letter = document.getElementById("loveLetter");
+  const button = document.getElementById("letterButton");
+  const isOpening = letter.classList.contains("hidden");
+
+  letter.classList.toggle("hidden");
+  button.textContent = isOpening ? "Close your letter ♡" : "Open your letter ♡";
+
+  if (isOpening) {
+    letter.scrollIntoView({ behavior: "smooth", block: "center" });
+    hearts(12);
+  }
+}
+
+const reasons = [
+  "I love you because you are uniquely, beautifully you. ♡",
+  "I love the thought of making more memories with you.",
+  "I love that no one else could ever be exactly who you are.",
+  "I love the little things about you that make you different from everyone else.",
+  "I love getting to know you more, one day at a time.",
+  "I love that you are the person I wanted to make this little universe for.",
+  "I love the possibility of all the adventures still ahead of us.",
+  "I love that I can celebrate you even when there's no special occasion.",
+  "I love that your name has a special place in my heart: Stacy Puello Flores.",
+  "I love you in more words than I can count, and still none feels like enough.",
+  "I love the moments when we laugh and forget about everything else.",
+  "I love you because loving you is something I wanted to celebrate today."
+];
+
+let reasonIndex = 0;
+
+function nextReason() {
+  reasonIndex = (reasonIndex + 1) % reasons.length;
+  document.getElementById("reasonBox").textContent = reasons[reasonIndex];
+  document.getElementById("reasonCount").textContent =
+    "REASON " + (reasonIndex + 1) + " OF " + reasons.length;
+  hearts(5);
+}
+
+function hearts(count) {
+  const symbols = ["♡", "♥", "💗", "✨", "💖"];
+
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement("span");
+    heart.className = "heart";
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.color = ["#ffb8d2", "#c7b7ff", "#fff0fa"][
+      Math.floor(Math.random() * 3)
+    ];
+    heart.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5200);
+  }
+}
+
+function viewPhoto(img) {
+  if (!img.complete || !img.naturalWidth) return;
+  document.getElementById("largePhoto").src = img.src;
+  document.getElementById("viewer").classList.add("open");
+}
+
+function closePhoto() {
+  document.getElementById("viewer").classList.remove("open");
+}
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closePhoto();
+});
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+async function toggleMusic() {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicButton.textContent = "♫ Pause our music";
+    } catch (error) {
+      musicButton.textContent = "Add music.mp3 first ♡";
+    }
+  } else {
+    music.pause();
+    musicButton.textContent = "♫ Play our music";
+  }
+}
+
+music.addEventListener("ended", () => {
+  musicButton.textContent = "♫ Play our music";
+});
+
+const lovePhrases = [
+  "I love you",
+  "Ek het jou lief",
+  "Te dua",
+  "Ana behibak",
+  "Ana behibek",
+  "Yes kez sirumem",
+  "M’bi fe",
+  "Ami tomake bhalobashi",
+  "Ya tabe kahayu",
+  "Nahigugma ako kanimo",
+  "Obicham te",
+  "Soro lahn nhee ah",
+  "T’estimo",
+  "Tsi ge yu",
+  "Ne mohotatse",
+  "Ndimakukonda",
+  "Ngo oiy ney a",
+  "Wo ai ni",
+  "U kamakutu nu",
+  "Ti tengu caru",
+  "Kisakihitin",
+  "Mi aime jou",
+  "Volim te",
+  "Miluji te",
+  "Jeg Elsker Dig",
+  "Ik hou van jou",
+  "Amin mela lle",
+  "Mi amas vin",
+  "Ma armastan sind",
+  "Afgreki’",
+  "Eg elski teg",
+  "Doset daram",
+  "Mahal kita",
+  "Mina rakastan sinua",
+  "Je t’aime",
+  "Je t’adore",
+  "Ik hald fan dy",
+  "Ta gra agam ort",
+  "Mikvarhar",
+  "Ich liebe dich",
+  "S’agapo",
+  "Hoo thunay prem karoo choo",
+  "Palangga ko ikaw",
+  "Aloha Au Iabim ta",
+  "Ljubim te",
+  "Te quiero",
+  "Ninapenda wewe",
+  "Jag alskar dig",
+  "Ich lieb Di",
+  "Mi lobi joe",
+  "Wa ga ei li",
+  "Ua Here Vau Ia Oe",
+  "Nan unnai kathalikaraen",
+  "Nenu ninnu premistunnanu",
+  "Phom rak khun",
+  "Ha eh bak",
+  "Seni Seviyorum",
+  "Ya tebe kahayu",
+  "Mai aap say pyaar karta hoo",
+  "Anh yêu em",
+  "‘Rwy’n dy garu di",
+  "Ikh hob dikh",
+  "Mo ni fe",
+  "Ezhele hezdege",
+  "Tom ho’ ichema"
+];
+
+const loveWords = document.getElementById("loveWords");
+
+lovePhrases.forEach(phrase => {
+  const word = document.createElement("span");
+  word.className = "love-word";
+  word.textContent = phrase;
+  loveWords.appendChild(word);
+});
+</script>
+</body>
+</html>
