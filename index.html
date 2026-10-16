@@ -394,6 +394,7 @@ footer {
 <nav aria-label="Main navigation">
   <a href="#memories">OUR MEMORIES</a>
   <a href="#letter">YOUR LETTER</a>
+  <a href="#second-letter">SECOND LETTER</a>
   <a href="#reasons">WHY I LOVE YOU</a>
 </nav>
 
@@ -525,6 +526,37 @@ footer {
     </div>
   </section>
 
+  <!-- Second Letter Section Added Here -->
+  <section class="soft-section" id="second-letter">
+    <div class="section-inner">
+      <p class="eyebrow">Another piece of my heart</p>
+      <h2>A second note for you 💌</h2>
+      <p class="description">
+        Because one letter could never hold everything I want to tell you.
+      </p>
+
+      <button class="button" id="secondLetterButton" onclick="toggleSecondLetter()">
+        Open your second letter ♡
+      </button>
+
+      <article class="letter-card hidden" id="secondLoveLetter">
+        <p>My dearest Stacy,</p>
+
+        <p>
+          I wanted to leave you a little extra note here just to remind you 
+          how much you mean to me on both the big days and the quiet, ordinary ones.
+        </p>
+
+        <p>
+          Thank you for being my favorite part of every single day.
+        </p>
+
+        <p>Forever yours,</p>
+        <p style="color:var(--gold);">Francis ✨</p>
+      </article>
+    </div>
+  </section>
+
   <section class="soft-section" id="languages">
     <div class="section-inner">
       <p class="eyebrow">One feeling, so many words</p>
@@ -612,16 +644,30 @@ function toggleLetter() {
   }
 }
 
+function toggleSecondLetter() {
+  const letter = document.getElementById("secondLoveLetter");
+  const button = document.getElementById("secondLetterButton");
+  const isOpening = letter.classList.contains("hidden");
+
+  letter.classList.toggle("hidden");
+  button.textContent = isOpening ? "Close your second letter ♡" : "Open your second letter ♡";
+
+  if (isOpening) {
+    letter.scrollIntoView({ behavior: "smooth", block: "center" });
+    hearts(12);
+  }
+}
+
 const reasons = [
   "I love you because you are uniquely, beautifully you. ♡",
-   "I love your smile when your nervous and happy.",
+  "I love your smile when your nervous and happy.",
   "I love the thought of making more memories with you.",
-   "I love your voice.",
+  "I love your voice.",
   "I love that no one else could ever be exactly who you are or even like you.",
-   "I love how understanding you are.",
+  "I love how understanding you are.",
   "I love getting to know you more, one day at a time.",
-   "I love how patient you are.",
-   "I love how everytime i'm with you its always a good time.",
+  "I love how patient you are.",
+  "I love how everytime i'm with you its always a good time.",
   "I love that you are the person I wanted to make this little universe for.",
   "I love that your name has a special place in my heart: Stacy Puello Flores.",
   "I love you in more words than I can count, and still none feels like enough.",
