@@ -32,9 +32,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-
 /* Sunflower Sticker Decals styled to pop against the dark brown background */
 .sunflower-decal {
   position: absolute;
-  width: 100px;
+  width: 95px;
   height: auto;
-  opacity: 0.95;
+  opacity: 0.9;
   pointer-events: none;
   z-index: 0;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 8px rgba(223, 179, 86, 0.3));
@@ -79,7 +79,7 @@ nav a:hover { color: var(--lavender); text-shadow: 0 0 8px var(--gold-shadow); }
 @keyframes sunGlow { to { filter: drop-shadow(0 6px 12px rgba(140, 100, 30, 0.6)); } }
 
 .eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-h1 { font-weight: normal; font-size: clamp(36px, 7.5vw, 74px); line-height: 1.15; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--white); }
+h1 { font-weight: normal; font-size: clamp(36px, 7.5vw, 74px); line-height: 1.15; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--lavender); text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
 
 .subtitle { max-width: 580px; color: var(--muted); line-height: 2; font-size: 18px; font-style: italic; }
 
@@ -105,12 +105,7 @@ h2 {
   margin: 14px 0; 
   font-family: "Baskerville", "Playfair Display", Georgia, serif; 
   color: var(--lavender);
-  text-shadow: 
-    -1px -1px 0 #bfa048,  
-     1px -1px 0 #bfa048,
-    -1px  1px 0 #bfa048,
-     1px  1px 0 #bfa048,
-     0 4px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 .description { max-width: 620px; margin: 0 auto 35px; color: var(--muted); line-height: 2; font-size: 17px; }
 
@@ -161,11 +156,7 @@ h2 {
   background: linear-gradient(135deg, #382924, #221815);
   color: var(--lavender); font-size: clamp(20px, 3vw, 26px); line-height: 1.9;
   font-family: "Baskerville", "Playfair Display", Georgia, serif;
-  text-shadow: 
-    -1px -1px 0 #bfa048,  
-     1px -1px 0 #bfa048,
-    -1px  1px 0 #bfa048,
-     1px  1px 0 #bfa048;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
   box-shadow: 0 12px 40px rgba(0,0,0,0.5);
 }
 .reason-count { color: var(--gold); font: 12px "Times New Roman", serif; letter-spacing: 3px; text-transform: uppercase; }
@@ -214,7 +205,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); colo
   <header class="hero">
     <div class="moon" aria-hidden="true">🌻</div>
     <p class="eyebrow">For the sunshine of my world</p>
-    <h1>Stacy Puello <span style="color: var(--lavender); text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);">Flores ♡</span></h1>
+    <h1>Stacy Puello Flores ♡</h1>
     <p class="subtitle">
       Mi Amor, wherever you turn your face, you bring warmth and light to everything around you just like a sunflower.
     </p>
@@ -306,7 +297,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); colo
   <section class="final-note">
     <div class="big-heart" aria-hidden="true">🌻</div>
     <p class="eyebrow">To My Sunshine</p>
-    <h2 class="gold-outline-text" style="display:inline-block; font-size:clamp(32px, 5vw, 48px); margin:14px 0;">Beneath This Sky,<br>It Is Forever You.</h2>
+    <h2 style="font-size:clamp(32px, 5vw, 48px); margin:14px 0; color:var(--lavender); text-shadow:0 4px 8px rgba(0,0,0,0.5);">Beneath This Sky,<br>It Is Forever You.</h2>
     <p class="description"> Of all the blooms in the garden, you are my favorite sight. Thank you for being part of my universe, Stacy. </p>
     <button class="button" onclick="hearts(35)"> Shower of Sunflowers & Gold ♡ </button>
   </section>
