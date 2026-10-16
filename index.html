@@ -17,8 +17,8 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  /* Uses your new cheetah/leopard sunflower background image */
-  background: url('images/background.jpg') repeat center center fixed;
+  /* Displays your background image (make sure it's named background.jpg in your images folder) */
+  background: #2b201c url('images/background.jpg') repeat center center fixed;
   background-size: cover;
   color: var(--white);
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
@@ -34,10 +34,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-
   position: absolute;
   width: 95px;
   height: auto;
-  opacity: 0.9;
+  opacity: 0.95;
   pointer-events: none;
   z-index: 0;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 8px rgba(223, 179, 86, 0.3));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(223, 179, 86, 0.4));
 }
 
 .stars, .stars::before, .stars::after {
@@ -68,34 +68,34 @@ nav a:hover { color: var(--lavender); text-shadow: 0 0 8px var(--gold-shadow); }
 .hero {
   min-height: 100svh; padding: 120px 20px 65px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: radial-gradient(ellipse at 50% 35%, rgba(43, 32, 28, 0.75), transparent 65%);
+  background: rgba(43, 32, 28, 0.55); /* Clean semi-transparent overlay to make text pop over background */
 }
 .moon {
   font-size: clamp(65px, 12vw, 105px);
   color: var(--gold);
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
   animation: sunGlow 4s ease-in-out infinite alternate;
 }
-@keyframes sunGlow { to { filter: drop-shadow(0 6px 12px rgba(140, 100, 30, 0.6)); } }
+@keyframes sunGlow { to { filter: drop-shadow(0 6px 12px rgba(140, 100, 30, 0.8)); } }
 
-.eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-h1 { font-weight: normal; font-size: clamp(36px, 7.5vw, 74px); line-height: 1.15; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--lavender); text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); }
+.eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+h1 { font-weight: normal; font-size: clamp(36px, 7.5vw, 74px); line-height: 1.15; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--lavender); text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9); }
 
-.subtitle { max-width: 580px; color: var(--muted); line-height: 2; font-size: 18px; font-style: italic; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.subtitle { max-width: 580px; color: var(--muted); line-height: 2; font-size: 18px; font-style: italic; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
 
 .button {
   border: 1px solid var(--gold);
   background: linear-gradient(135deg, #4d372f, #2b201c);
   color: var(--gold); border-radius: 4px; padding: 14px 26px; margin: 12px 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
   text-transform: uppercase; font: 12px "Times New Roman", serif; letter-spacing: 2px;
   transition: all .3s ease;
 }
 .button:hover { background: linear-gradient(135deg, #664a40, #42302a); color: var(--white); box-shadow: 0 6px 15px var(--gold-shadow); transform: translateY(-2px); }
-.button.secondary { background: transparent; border-color: rgba(223, 179, 86, 0.5); color: var(--muted); }
+.button.secondary { background: rgba(43, 32, 28, 0.6); border-color: rgba(223, 179, 86, 0.5); color: var(--muted); }
 .button.secondary:hover { border-color: var(--gold); color: var(--gold); }
 
-.scroll-note { margin-top: 40px; color: var(--gold); font: 11px "Times New Roman", serif; letter-spacing: 3px; opacity: 0.8; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.scroll-note { margin-top: 40px; color: var(--gold); font: 11px "Times New Roman", serif; letter-spacing: 3px; opacity: 0.9; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
 
 section { padding: 90px 20px; scroll-margin-top: 35px; position: relative; }
 .section-inner { max-width: 950px; margin: auto; }
@@ -105,14 +105,14 @@ h2 {
   margin: 14px 0; 
   font-family: "Baskerville", "Playfair Display", Georgia, serif; 
   color: var(--lavender);
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
 }
-.description { max-width: 620px; margin: 0 auto 35px; color: var(--muted); line-height: 2; font-size: 17px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.description { max-width: 620px; margin: 0 auto 35px; color: var(--muted); line-height: 2; font-size: 17px; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
 
 .soft-section {
-  background: rgba(34, 24, 21, 0.88);
+  background: rgba(34, 24, 21, 0.82);
   border-top: 1px solid rgba(223, 179, 86, 0.3); border-bottom: 1px solid rgba(223, 179, 86, 0.3);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
 }
 
 .gallery {
@@ -120,9 +120,9 @@ h2 {
   gap: 24px; margin-top: 35px;
 }
 .photo-card {
-  padding: 12px 12px 22px; background: rgba(66, 48, 42, 0.75); 
+  padding: 12px 12px 22px; background: rgba(66, 48, 42, 0.85); 
   border: 1px solid var(--gold);
-  border-radius: 4px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border-radius: 4px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   transition: transform .3s, border-color .3s;
 }
 .photo-card:hover { transform: translateY(-6px); border-color: var(--lavender); box-shadow: 0 10px 25px var(--gold-shadow); }
@@ -135,8 +135,8 @@ h2 {
 .letter-card {
   max-width: 700px; margin: 30px auto; padding: clamp(28px, 5vw, 50px);
   border: 1px solid var(--gold); border-radius: 6px;
-  background: rgba(40, 29, 25, 0.92);
-  box-shadow: 0 15px 50px rgba(0,0,0,0.7); 
+  background: rgba(40, 29, 25, 0.94);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.8); 
   text-align: left; line-height: 2.1; color: var(--white); font-size: 18px;
 }
 .letter-card p { margin: 0 0 20px; }
@@ -145,7 +145,7 @@ h2 {
 .love-languages { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 840px; margin: 30px auto; }
 .love-word {
   padding: 10px 16px; border-radius: 3px; border: 1px solid rgba(223, 179, 86, 0.4);
-  background: rgba(66, 48, 42, 0.75); color: var(--lavender); font-size: 15px;
+  background: rgba(66, 48, 42, 0.85); color: var(--lavender); font-size: 15px;
   transition: all .25s;
 }
 .love-word:hover { background: rgba(223, 179, 86, 0.3); border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
@@ -154,18 +154,18 @@ h2 {
   max-width: 640px; min-height: 160px; padding: 35px 25px; margin: 25px auto;
   display: flex; align-items: center; justify-content: center;
   border: 1px solid var(--gold); border-radius: 6px;
-  background: rgba(43, 32, 28, 0.92);
+  background: rgba(43, 32, 28, 0.94);
   color: var(--lavender); font-size: clamp(20px, 3vw, 26px); line-height: 1.9;
   font-family: "Baskerville", "Playfair Display", Georgia, serif;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
 }
-.reason-count { color: var(--gold); font: 12px "Times New Roman", serif; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.reason-count { color: var(--gold); font: 12px "Times New Roman", serif; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
 
-.final-note { padding: 100px 20px; background: radial-gradient(ellipse at center, rgba(89, 66, 57, 0.8), transparent 70%); }
-.final-note .big-heart { font-size: 56px; color: var(--gold); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); }
+.final-note { padding: 100px 20px; background: rgba(59, 44, 39, 0.75); backdrop-filter: blur(4px); }
+.final-note .big-heart { font-size: 56px; color: var(--gold); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); }
 
-footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); color: var(--muted); font: 12px "Times New Roman", serif; letter-spacing: 1px; line-height: 2.2; background: rgba(31, 23, 20, 0.9); }
+footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); color: var(--muted); font: 12px "Times New Roman", serif; letter-spacing: 1px; line-height: 2.2; background: rgba(31, 23, 20, 0.95); }
 
 .heart {
   position: fixed; bottom: -40px; pointer-events: none; z-index: 10;
@@ -298,7 +298,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); colo
   <section class="final-note">
     <div class="big-heart" aria-hidden="true">🌻</div>
     <p class="eyebrow">To My Sunshine</p>
-    <h2 style="font-size:clamp(32px, 5vw, 48px); margin:14px 0; color:var(--lavender); text-shadow:0 4px 8px rgba(0,0,0,0.8);">Beneath This Sky,<br>It Is Forever You.</h2>
+    <h2 style="font-size:clamp(32px, 5vw, 48px); margin:14px 0; color:var(--lavender); text-shadow:0 4px 10px rgba(0,0,0,0.9);">Beneath This Sky,<br>It Is Forever You.</h2>
     <p class="description"> Of all the blooms in the garden, you are my favorite sight. Thank you for being part of my universe, Stacy. </p>
     <button class="button" onclick="hearts(35)"> Shower of Sunflowers & Gold ♡ </button>
   </section>
@@ -391,7 +391,7 @@ async function toggleMusic() {
     }
   } else {
     music.pause();
-    musicButton.textContent = "♫ Play Our Anthem";
+    musicButton.textContent = "♫ Play Another";
   }
 }
 
