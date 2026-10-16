@@ -19,13 +19,25 @@ html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
-    /* Combines a rich brown and purple-plum gradient overlay with your cheetah background image */
-    background: linear-gradient(135deg, rgba(43, 32, 28, 0.88), rgba(58, 38, 54, 0.85)), 
-                url('images/background.jpg') repeat center center fixed;
-    background-size: cover;
+    /* Rich chocolate brown base color */
+    background-color: #2b201c;
+    /* Layers a romantic purple/brown gradient overlay on top of CSS-generated cheetah spots */
+    background-image: 
+        linear-gradient(135deg, rgba(43, 32, 28, 0.90), rgba(58, 38, 54, 0.88)),
+        radial-gradient(ellipse at center, #3d261d 20%, transparent 21%),
+        radial-gradient(ellipse at center, #1a120f 20%, transparent 21%);
+    background-size: 100% 100%, 50px 50px, 50px 50px;
+    background-position: 0 0, 0 0, 25px 25px;
     color: var(--white);
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
     text-align: center;
     overflow-x: hidden;
     position: relative;
 }
+
+/* Make sure your lavender text pops clearly */
+h1, h2, h3, .lavender-text {
+    color: var(--lavender);
+}
+</style>
+</head>
