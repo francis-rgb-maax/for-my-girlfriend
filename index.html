@@ -5,169 +5,765 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2b201c">
 <title>For Stacy, Mi Amor ♡</title>
+
 <style>
 :root {
-  --lavender: #d6cbff;
-  --gold: #dfb356;
-  --gold-shadow: rgba(140, 100, 30, 0.4);
+  --brown: #2b201c;      /* Rich chocolate brown */
+  --purple: #3d2642;     /* Romantic deep purple/plum */
+  --lavender: #d6cbff;   /* Bright lavender text */
+  --pink: #f0c2ff;       /* Soft pink accents */
+  --gold: #dfb356;       /* Sunflower gold */
   --white: #fff8fc;
   --muted: #e6dfec;
 }
+
 * { box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  /* Layers a rich brown and purple gradient over your cheetah print background image to keep lavender text readable */
-  background: linear-gradient(135deg, rgba(43, 32, 28, 0.88), rgba(58, 38, 54, 0.85)), 
-              url('images/background.jpg') repeat center center fixed;
-  background-size: cover;
+  /* Layers a rich brown and purple gradient over a pure-CSS cheetah spot pattern */
+  background-color: var(--brown);
+  background-image: 
+    linear-gradient(135deg, rgba(43, 32, 28, 0.88), rgba(61, 38, 66, 0.85)),
+    radial-gradient(ellipse at center, #4a3025 22%, transparent 23%),
+    radial-gradient(ellipse at center, #1b1210 22%, transparent 23%),
+    radial-gradient(ellipse at center, #523746 18%, transparent 19%);
+  background-size: 100% 100%, 60px 60px, 60px 60px, 45px 45px;
+  background-position: 0 0, 0 0, 30px 30px, 15px 15px;
   color: var(--white);
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   text-align: center;
   overflow-x: hidden;
-  position: relative;
 }
 
-.sunflower-deco {
-  position: absolute;
-  width: 95px;
-  height: auto;
-  opacity: 0.95;
-  pointer-events: none;
-  z-index: 0;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(223, 179, 86, 0.4));
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 5px;
 }
 
 .stars, .stars::before, .stars::after {
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; background-image: radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)), radial-gradient(2px 2px at 40px 70px, var(--lavender), rgba(0,0,0,0)); background-repeat: repeat; background-size: 200px 200px; opacity: 0.25; z-index: 1;
+  position: fixed;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 80% 30%, #fff 50%, transparent 100%),
+    radial-gradient(2px 2px at 40% 70%, var(--gold) 50%, transparent 100%),
+    radial-gradient(1px 1px at 60% 15%, #fff 50%, transparent 100%),
+    radial-gradient(2px 2px at 90% 80%, #ffcce2 50%, transparent 100%),
+    radial-gradient(1px 1px at 25% 50%, var(--lavender) 50%, transparent 100%);
+  background-size: 310px 290px;
+  animation: twinkle 5s ease-in-out infinite alternate;
 }
 
-.hero {
-  min-height: 100svh; padding: 120px 20px 65px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: rgba(43, 32, 28, 0.55);
+.stars::before {
+  background-size: 230px 240px;
+  opacity: .45;
+  transform: rotate(20deg);
+  animation-delay: -2s;
 }
+
+.stars::after {
+  background-size: 370px 330px;
+  opacity: .35;
+  animation-delay: -4s;
+}
+
+@keyframes twinkle {
+  from { opacity: .3; }
+  to { opacity: .9; }
+}
+
+main, footer, nav {
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 22px 15px;
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 34px);
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font: 12px Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+nav a:hover { color: var(--pink); }
+
+.hero {
+  min-height: 100svh; padding: 110px 20px 65px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at 50% 35%, rgba(43, 32, 28, 0.75), transparent 65%);
+}
+
 .moon {
   font-size: clamp(65px, 12vw, 105px);
   color: var(--gold);
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
-  animation: sunGlow 4s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 35px rgba(223, 179, 86, 0.5));
+  animation: moonGlow 4s ease-in-out infinite alternate;
 }
-@keyframes sunGlow { to { filter: drop-shadow(0 6px 12px rgba(140, 100, 30, 0.8)); } }
+@keyframes moonGlow {
+  to { filter: drop-shadow(0 0 55px rgba(223, 179, 86, 0.8)); }
+}
 
-.eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
-h1 { font-weight: normal; font-size: clamp(36px, 7.5vw, 74px); line-height: 1.15; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--lavender); text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9); }
+.eyebrow {
+  color: var(--gold);
+  font: 11px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1.8;
+}
 
-.subtitle { max-width: 580px; color: var(--muted); line-height: 2; font-size: 18px; font-style: italic; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
+h1 {
+  font-weight: normal;
+  font-size: clamp(42px, 9vw, 82px);
+  line-height: 1.12;
+  margin: 18px 0;
+  color: var(--lavender);
+  text-shadow: 0 0 35px rgba(214, 203, 255, 0.3);
+}
+
+h1 span { color: var(--gold); }
+
+.subtitle {
+  max-width: 550px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 17px;
+}
 
 .button {
   border: 1px solid var(--gold);
   background: linear-gradient(135deg, #4d372f, #2b201c);
-  color: var(--gold); border-radius: 4px; padding: 14px 26px; margin: 12px 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
-  text-transform: uppercase; font: 12px "Times New Roman", serif; letter-spacing: 2px;
-  transition: all .3s ease;
+  color: var(--gold);
+  border-radius: 30px;
+  padding: 14px 23px;
+  margin: 12px 5px;
+  box-shadow: 0 0 25px rgba(140, 100, 30, 0.3);
+  transition: transform .2s, box-shadow .2s;
 }
-.button:hover { background: linear-gradient(135deg, #664a40, #42302a); color: var(--white); box-shadow: 0 6px 15px var(--gold-shadow); transform: translateY(-2px); }
-.button.secondary { background: rgba(43, 32, 28, 0.6); border-color: rgba(223, 179, 86, 0.5); color: var(--muted); }
-.button.secondary:hover { border-color: var(--gold); color: var(--gold); }
 
-.scroll-note { margin-top: 40px; color: var(--gold); font: 11px "Times New Roman", serif; letter-spacing: 3px; opacity: 0.9; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(223, 179, 86, 0.5);
+  color: var(--white);
+}
 
-section { padding: 90px 20px; scroll-margin-top: 35px; position: relative; }
-.section-inner { max-width: 950px; margin: auto; }
+.button.secondary {
+  background: rgba(43, 32, 28, 0.6);
+  border-color: rgba(223, 179, 86, 0.5);
+  color: var(--muted);
+}
 
-h2 { 
-  margin: 14px 0; 
-  font-family: "Baskerville", "Playfair Display", Georgia, serif; 
+.scroll-note {
+  margin-top: 35px;
+  color: var(--gold);
+  font: 11px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+section {
+  padding: 85px 20px;
+  scroll-margin-top: 35px;
+}
+
+.section-inner {
+  max-width: 950px;
+  margin: auto;
+}
+
+h2 {
+  font-size: clamp(31px, 5vw, 46px);
+  font-weight: normal;
+  margin: 14px 0;
   color: var(--lavender);
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
 }
-.description { max-width: 620px; margin: 0 auto 35px; color: var(--muted); line-height: 2; font-size: 17px; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
+
+.description {
+  max-width: 600px;
+  margin: 0 auto 35px;
+  color: var(--muted);
+  line-height: 1.9;
+}
 
 .soft-section {
-  background: rgba(34, 24, 21, 0.82);
-  border-top: 1px solid rgba(223, 179, 86, 0.3); border-bottom: 1px solid rgba(223, 179, 86, 0.3);
+  background: linear-gradient(180deg, rgba(34, 24, 21, 0.9), rgba(58, 38, 54, 0.85), rgba(34, 24, 21, 0.9));
+  border-top: 1px solid rgba(223, 179, 86, 0.3);
+  border-bottom: 1px solid rgba(223, 179, 86, 0.3);
   backdrop-filter: blur(6px);
 }
 
 .gallery {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-  gap: 24px; margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 24px;
+  margin-top: 35px;
 }
+
 .photo-card {
-  padding: 12px 12px 22px; background: rgba(66, 48, 42, 0.85); 
+  padding: 11px 11px 20px;
+  background: rgba(66, 48, 42, 0.85);
   border: 1px solid var(--gold);
-  border-radius: 4px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  transition: transform .3s, border-color .3s;
+  border-radius: 7px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  transition: transform .25s, border-color .25s;
 }
-.photo-card:hover { transform: translateY(-6px); border-color: var(--lavender); box-shadow: 0 10px 25px var(--gold-shadow); }
+
+.photo-card:hover {
+  transform: translateY(-6px) rotate(0);
+  border-color: var(--lavender);
+}
+
+.photo-card:nth-child(odd) { transform: rotate(-1deg); }
+.photo-card:nth-child(even) { transform: rotate(1deg); }
+.photo-card:nth-child(odd):hover,
+.photo-card:nth-child(even):hover { transform: translateY(-6px); }
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #2b201c;
+  border-radius: 3px;
+  cursor: zoom-in;
+}
+
+.photo-caption {
+  margin: 15px 4px 0;
+  color: var(--lavender);
+  font-size: 17px;
+}
 
 .letter-card {
-  max-width: 700px; margin: 30px auto; padding: clamp(28px, 5vw, 50px);
-  border: 1px solid var(--gold); border-radius: 6px;
-  background: rgba(40, 29, 25, 0.94);
-  box-shadow: 0 15px 50px rgba(0,0,0,0.8); 
-  text-align: left; line-height: 2.1; color: var(--white); font-size: 18px;
+  max-width: 690px;
+  margin: 30px auto;
+  padding: clamp(23px, 5vw, 45px);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(43, 32, 28, 0.95), rgba(58, 38, 54, 0.95));
+  box-shadow: 0 15px 55px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  line-height: 2;
+  color: var(--white);
 }
-.letter-card p { margin: 0 0 20px; }
 
-.love-languages { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 840px; margin: 30px auto; }
+.letter-card p { margin: 0 0 17px; }
+
+.hidden { display: none; }
+
+.love-languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 820px;
+  margin: 30px auto;
+}
+
 .love-word {
-  padding: 10px 16px; border-radius: 3px; border: 1px solid rgba(223, 179, 86, 0.4);
-  background: rgba(66, 48, 42, 0.85); color: var(--lavender); font-size: 15px;
-  transition: all .25s;
+  padding: 9px 13px;
+  border-radius: 25px;
+  border: 1px solid rgba(223, 179, 86, 0.4);
+  background: rgba(66, 48, 42, 0.85);
+  color: var(--lavender);
+  font-size: 14px;
+  transition: background .2s, transform .2s;
 }
-.love-word:hover { background: rgba(223, 179, 86, 0.3); border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-.reason-card {
-  max-width: 640px; min-height: 160px; padding: 35px 25px; margin: 25px auto;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--gold); border-radius: 6px;
-  background: rgba(43, 32, 28, 0.94);
-  color: var(--lavender); font-size: clamp(20px, 3vw, 26px); line-height: 1.9;
-  font-family: "Baskerville", "Playfair Display", Georgia, serif;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+.love-word:hover {
+  background: rgba(223, 179, 86, 0.3);
+  transform: translateY(-2px);
+  color: var(--gold);
 }
-.reason-count { color: var(--gold); font: 12px "Times New Roman", serif; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
 
-.final-note { padding: 100px 20px; background: rgba(59, 44, 39, 0.75); backdrop-filter: blur(4px); }
-.final-note .big-heart { font-size: 56px; color: var(--gold); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); }
+.reason-box {
+  max-width: 620px;
+  min-height: 155px;
+  padding: 30px 20px;
+  margin: 25px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(43, 32, 28, 0.95), rgba(61, 38, 66, 0.95));
+  color: var(--lavender);
+  font-size: clamp(19px, 3vw, 25px);
+  line-height: 1.8;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
 
-footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); color: var(--muted); font: 12px "Times New Roman", serif; letter-spacing: 1px; line-height: 2.2; background: rgba(31, 23, 20, 0.95); }
+.reason-count {
+  color: var(--gold);
+  font: 12px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.final-note {
+  padding: 90px 20px;
+  background: radial-gradient(ellipse at center, rgba(58, 38, 54, 0.8), transparent 70%);
+}
+
+.final-note .big-heart {
+  font-size: 54px;
+  color: var(--gold);
+  filter: drop-shadow(0 0 20px rgba(223, 179, 86, 0.5));
+}
+
+footer {
+  padding: 30px 15px;
+  border-top: 1px solid rgba(223, 179, 86, 0.3);
+  color: var(--muted);
+  font: 12px Arial, sans-serif;
+  line-height: 2;
+  background: rgba(31, 23, 20, 0.95);
+}
 
 .heart {
-  position: fixed; bottom: -40px; pointer-events: none; z-index: 10;
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  z-index: 10;
+  animation: floatUp 4s ease-in forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-115vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+.viewer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(20, 14, 18, 0.95);
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.viewer.open { display: flex; }
+
+.viewer img {
+  max-width: 92%;
+  max-height: 78vh;
+  object-fit: contain;
+  border: 5px solid var(--gold);
+  border-radius: 3px;
+}
+
+.viewer button { margin-top: 15px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
+
 <body>
-  <!-- Rest of your body/sections remain intact -->
-  <section class="final-note">
-    <div class="big-heart" aria-hidden="true">🌻</div>
-    <p class="eyebrow">To My Sun</p>
-    <h2 style="font-size:clamp(32px, 5vw, 48px); margin:14px 0; color:var(--lavender); text-shadow:0 4px 10px rgba(0,0,0,0.9);">Beneath This Sky,<br>It Is Forever You.</h2>
-    <p class="description"> you are my favorite sight, my favorite smell, my favorite person to hear, my favorite person ot be next to. Thank you for being part of my universe, Stacy. </p>
-    <button class="button" onclick="hearts(35)"> Shower of Sunflowers & Gold ♡ </button>
+<div class="stars" aria-hidden="true"></div>
+
+<nav aria-label="Main navigation">
+  <a href="#memories">OUR MEMORIES</a>
+  <a href="#letter">YOUR LETTER</a>
+  <a href="#reasons">WHY I LOVE YOU</a>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="moon" aria-hidden="true">🌻</div>
+    <p class="eyebrow">For the girl who has my heart</p>
+
+    <h1>Stacy Puello<br><span>Flores ♡</span></h1>
+
+    <p class="subtitle">
+      Mi Amor, even if I could gather every star in the universe,
+      there wouldn't be enough stars to show you how much you mean to me.
+    </p>
+
+    <p style="color:var(--lavender); font-size:20px;">You are my favorite kind of magic.</p>
+
+    <button class="button" onclick="startSurprise()">
+      Open your little universe ✨
+    </button>
+
+    <button class="button secondary" onclick="toggleMusic()" id="musicButton">
+      ♫ Play our music
+    </button>
+
+    <p class="scroll-note">MADE WITH LOVE, JUST FOR YOU ↓</p>
+  </header>
+
+  <section class="soft-section" id="memories">
+    <div class="section-inner">
+      <p class="eyebrow">Little pieces of forever</p>
+      <h2>Our universe 📸</h2>
+      <p class="description">
+        Out of all the people, places, and moments in this huge universe,
+        I'm grateful for the memories I get to share with you.
+        Replace these pictures with our favorite moments.
+      </p>
+
+      <div class="gallery">
+        <div class="photo-card">
+          <img src="images/photo1.jpg" alt="Our first favorite memory"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo1.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">A memory I'll always keep ♡</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/photo2.jpg" alt="A special moment together"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo2.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">My favorite person 🌻</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/photo3.jpg" alt="A happy day together"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo3.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">Just us, just right ✨</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/photo4.jpg" alt="A special memory together"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo4.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">My Favorite Memory ❤️</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/photo5.jpg" alt="My beautiful love"
+               onclick="viewPhoto(this)"
+               onerror="this.onerror=null; this.alt='Add your photo at images/photo5.jpg'; this.style.opacity='.15';">
+          <p class="photo-caption">My Beautiful Love 🌻</p>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <script>
-    function hearts(count) {
-      // existing hearts script
+  <section id="letter">
+    <div class="section-inner">
+      <p class="eyebrow">A secret from my heart</p>
+      <h2>A letter for Mi Amor 💌</h2>
+      <p class="description">
+        Some feelings are too big for a text message.
+        Tap below when you're ready.
+      </p>
+
+      <button class="button" id="letterButton" onclick="toggleLetter()">
+        Open your letter ♡
+      </button>
+
+      <article class="letter-card hidden" id="loveLetter">
+        <p>To my beautiful Stacy, my Mi Amor,</p>
+
+        <p>
+          I made this little place in the universe for you because I wanted
+          you to have something that reminds you how loved you are.
+          It doesn't have to be a special day for me to celebrate you.
+          Loving you is already a reason to celebrate.
+        </p>
+
+        <p>
+          If you ever have a hard day, I hope you remember that you matter
+          so much. If you ever doubt how special you are, I hope this page
+          reminds you that the world is brighter with you in it.
+        </p>
+
+        <p>
+          I wish I could put every feeling I have for you into words.
+          Since one language isn't enough, I filled this page with ways
+          people say those three little words around the world.
+          But no matter how many ways I say it, the feeling is still mine
+          and meant for you.
+        </p>
+
+        <p>
+          Thank you for being Stacy. Thank you for being my Mi Amor.
+          I hope we keep making memories, laughing together, learning
+          about each other, and finding reasons to choose one another.
+        </p>
+
+        <p>
+        I just love you. ❤️
+        </p>
+
+        <p>Always sending you love,</p>
+        <p style="color:var(--gold);">Your person Francis ✨</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="soft-section" id="languages">
+    <div class="section-inner">
+      <p class="eyebrow">One feeling, so many words</p>
+      <h2>I love you, Mi Amor 🌎</h2>
+      <p class="description">
+        I could say it in a hundred different ways, but every one of them
+        is for the same person: you, Stacy.
+      </p>
+
+      <div class="love-languages" id="loveWords"></div>
+
+      <p style="color:var(--gold); font-size:19px; line-height:1.8;">
+        Different words. One heart. You. ♡
+      </p>
+    </div>
+  </section>
+
+  <section id="reasons">
+    <div class="section-inner">
+      <p class="eyebrow">A little reminder, whenever you need it</p>
+      <h2>Reasons I love you 💗</h2>
+      <p class="description">
+        There are so many that I couldn't fit them all on one page.
+        Tap the button and let me remind you of another.
+      </p>
+
+      <div class="reason-box" id="reasonBox" aria-live="polite">
+        I love you because you are uniquely, beautifully you. ♡
+      </div>
+
+      <p class="reason-count" id="reasonCount">REASON 1</p>
+
+      <button class="button" onclick="nextReason()">
+        Give me another reason ✨
+      </button>
+    </div>
+  </section>
+
+  <section class="final-note">
+    <div class="big-heart" aria-hidden="true">🌻</div>
+    <p class="eyebrow">To my Mi Amor</p>
+    <h2>Under this sky,<br>it's always you.</h2>
+    <p class="description">
+      Of all the stars, you're the one I want to keep
+      looking toward. Thank you for being part of my universe, Stacy.
+    </p>
+    <button class="button" onclick="hearts(35)">
+      Full of love for you ♡
+    </button>
+  </section>
+</main>
+
+<footer>
+  Made for Stacy Puello Flores, with love. 🌻
+  <br>Mi Amor, today and on all the ordinary days, too.
+</footer>
+
+<div class="viewer" id="viewer" role="dialog"
+     aria-modal="true" aria-label="Photo viewer"
+     onclick="closePhoto()">
+  <img id="largePhoto" src="" alt="A memory together">
+  <button class="button secondary">Close photo ✕</button>
+</div>
+
+<!-- Upload your own licensed MP3 file named music.mp3 to the repository root. -->
+<audio id="backgroundMusic" src="music.mp3" loop preload="none"></audio>
+
+<script>
+function startSurprise() {
+  document.getElementById("memories").scrollIntoView({ behavior: "smooth" });
+  hearts(18);
+}
+
+function toggleLetter() {
+  const letter = document.getElementById("loveLetter");
+  const button = document.getElementById("letterButton");
+  const isOpening = letter.classList.contains("hidden");
+
+  letter.classList.toggle("hidden");
+  button.textContent = isOpening ? "Close your letter ♡" : "Open your letter ♡";
+
+  if (isOpening) {
+    letter.scrollIntoView({ behavior: "smooth", block: "center" });
+    hearts(12);
+  }
+}
+
+const reasons = [
+  "I love you because you are uniquely, beautifully you. ♡",
+  "I love the thought of making more memories with you.",
+  "I love that no one else could ever be exactly who you are or even like you.",
+  "I love getting to know you more, one day at a time.",
+  "I love you"
+  "I love that you are the person I wanted to make this little universe for.",
+  "I love that your name has a special place in my heart: Stacy Puello Flores.",
+  "I love you in more words than I can count, and still none feels like enough.",
+  "I love the moments when we laugh and forget about everything else.",
+  "I love you because loving you is something I want to celebrate everyday."
+];
+
+let reasonIndex = 0;
+
+function nextReason() {
+  reasonIndex = (reasonIndex + 1) % reasons.length;
+  document.getElementById("reasonBox").textContent = reasons[reasonIndex];
+  document.getElementById("reasonCount").textContent =
+    "REASON " + (reasonIndex + 1) + " OF " + reasons.length;
+  hearts(5);
+}
+
+function hearts(count) {
+  const symbols = ["♡", "♥", "🌻", "✨", "💖"];
+
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement("span");
+    heart.className = "heart";
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.color = ["#dfb356", "#d6cbff", "#fff0fa"][
+      Math.floor(Math.random() * 3)
+    ];
+    heart.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5200);
+  }
+}
+
+function viewPhoto(img) {
+  if (!img.complete || !img.naturalWidth) return;
+  document.getElementById("largePhoto").src = img.src;
+  document.getElementById("viewer").classList.add("open");
+}
+
+function closePhoto() {
+  document.getElementById("viewer").classList.remove("open");
+}
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closePhoto();
+});
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+async function toggleMusic() {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicButton.textContent = "♫ Pause our music";
+    } catch (error) {
+      musicButton.textContent = "Add music.mp3 first ♡";
     }
-    function toggleMusic() {
-      // existing audio toggle logic
-      let musicButton = document.getElementById('musicButton');
-      let music = document.getElementById('bgMusic');
-      if (music.paused) {
-        music.play();
-        musicButton.textContent = "♫ Play Another";
-      } else {
-        music.pause();
-        musicButton.textContent = "♫ Play Another";
-      }
-    }
-  </script>
+  } else {
+    music.pause();
+    musicButton.textContent = "♫ Play our music";
+  }
+}
+
+music.addEventListener("ended", () => {
+  musicButton.textContent = "♫ Play our music";
+});
+
+const lovePhrases = [
+  "I love you",
+  "Ek het jou lief",
+  "Te dua",
+  "Ana behibak",
+  "Ana behibek",
+  "Yes kez sirumem",
+  "M’bi fe",
+  "Ami tomake bhalobashi",
+  "Ya tabe kahayu",
+  "Nahigugma ako kanimo",
+  "Obicham te",
+  "Soro lahn nhee ah",
+  "T’estimo",
+  "Tsi ge yu",
+  "Ne mohotatse",
+  "Ndimakukonda",
+  "Ngo oiy ney a",
+  "Wo ai ni",
+  "U kamakutu nu",
+  "Ti tengu caru",
+  "Kisakihitin",
+  "Mi aime jou",
+  "Volim te",
+  "Miluji te",
+  "Jeg Elsker Dig",
+  "Ik hou van jou",
+  "Amin mela lle",
+  "Mi amas vin",
+  "Ma armastan sind",
+  "Afgreki’",
+  "Eg elski teg",
+  "Doset daram",
+  "Mahal kita",
+  "Mina rakastan sinua",
+  "Je t’aime",
+  "Je t’adore",
+  "Ik hald fan dy",
+  "Ta gra agam ort",
+  "Mikvarhar",
+  "Ich liebe dich",
+  "S’agapo",
+  "Hoo thunay prem karoo choo",
+  "Palangga ko ikaw",
+  "Aloha Au Iabim ta",
+  "Ljubim te",
+  "Te quiero",
+  "Ninapenda wewe",
+  "Jag alskar dig",
+  "Ich lieb Di",
+  "Mi lobi joe",
+  "Wa ga ei li",
+  "Ua Here Vau Ia Oe",
+  "Nan unnai kathalikaraen",
+  "Nenu ninnu premistunnanu",
+  "Phom rak khun",
+  "Ha eh bak",
+  "Seni Seviyorum",
+  "Ya tebe kahayu",
+  "Mai aap say pyaar karta hoo",
+  "Anh yêu em",
+  "‘Rwy’n dy garu di",
+  "Ikh hob dikh",
+  "Mo ni fe",
+  "Ezhele hezdege",
+  "Tom ho’ ichema"
+];
+
+const loveWords = document.getElementById("loveWords");
+
+lovePhrases.forEach(phrase => {
+  const word = document.createElement("span");
+  word.className = "love-word";
+  word.textContent = phrase;
+  loveWords.appendChild(word);
+});
+</script>
 </body>
 </html>
