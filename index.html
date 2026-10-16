@@ -10,8 +10,8 @@
   --brown: #2b201c;
   --cocoa: #42302a;
   --lavender: #d6cbff;
-  --gold: #f3d482;
-  --gold-glow: rgba(243, 212, 130, 0.4);
+  --gold: #dfb356;
+  --gold-shadow: rgba(140, 100, 30, 0.4);
   --white: #fff8fc;
   --muted: #e6dfec;
 }
@@ -24,26 +24,37 @@ body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   text-align: center;
   overflow-x: hidden;
+  position: relative;
 }
 button { font: inherit; cursor: pointer; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 
-/* Gold outlined lavender text utility */
+/* Elegant shiny gold outlined lavender text */
 .gold-outline-text {
   color: var(--lavender);
   text-shadow: 
-    -1px -1px 0 var(--gold),  
-     1px -1px 0 var(--gold),
-    -1px  1px 0 var(--gold),
-     1px  1px 0 var(--gold),
-     0 0 15px rgba(243, 212, 130, 0.5);
+    -1px -1px 0 #bfa048,  
+     1px -1px 0 #bfa048,
+    -1px  1px 0 #bfa048,
+     1px  1px 0 #bfa048,
+     0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Random Sunflower Decals in the background */
+.sunflower-decal {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
 .stars, .stars::before, .stars::after {
   position: fixed; inset: 0; content: ""; pointer-events: none; z-index: 0;
-  background-image: radial-gradient(2px 2px at 10% 20%, #f3d482 60%, transparent 100%), 
+  background-image: radial-gradient(2px 2px at 10% 20%, #dfb356 60%, transparent 100%), 
                     radial-gradient(1px 1px at 80% 30%, #d6cbff 50%, transparent 100%), 
-                    radial-gradient(2px 2px at 40% 70%, #f3d482 50%, transparent 100%), 
+                    radial-gradient(2px 2px at 40% 70%, #dfb356 50%, transparent 100%), 
                     radial-gradient(1px 1px at 60% 15%, #d6cbff 50%, transparent 100%), 
                     radial-gradient(2px 2px at 90% 80%, #ffcce2 50%, transparent 100%);
   background-size: 310px 290px;
@@ -57,12 +68,12 @@ main, footer, nav { position: relative; z-index: 1; }
 nav {
   position: absolute; top: 0; width: 100%; padding: 25px 15px;
   display: flex; justify-content: center; gap: clamp(15px, 4vw, 38px); flex-wrap: wrap;
-  border-bottom: 1px solid rgba(243, 212, 130, 0.25);
+  border-bottom: 1px solid rgba(223, 179, 86, 0.3);
   background: rgba(43, 32, 28, 0.85);
   backdrop-filter: blur(8px);
 }
 nav a { color: var(--gold); text-decoration: none; font: 11px "Times New Roman", serif; letter-spacing: 2px; text-transform: uppercase; }
-nav a:hover { color: var(--lavender); text-shadow: 0 0 10px var(--gold-glow); }
+nav a:hover { color: var(--lavender); text-shadow: 0 0 8px var(--gold-shadow); }
 
 .hero {
   min-height: 100svh; padding: 120px 20px 65px;
@@ -72,21 +83,21 @@ nav a:hover { color: var(--lavender); text-shadow: 0 0 10px var(--gold-glow); }
 .moon {
   font-size: clamp(65px, 12vw, 105px);
   color: var(--gold);
-  filter: drop-shadow(0 0 35px var(--gold-glow));
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
   animation: sunGlow 4s ease-in-out infinite alternate;
 }
-@keyframes sunGlow { to { filter: drop-shadow(0 0 55px rgba(243, 212, 130, 0.8)); } }
+@keyframes sunGlow { to { filter: drop-shadow(0 6px 12px rgba(140, 100, 30, 0.6)); } }
 
-.eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 0 12px rgba(243, 212, 130, 0.3); }
+.eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
 h1 { font-weight: normal; font-size: clamp(42px, 9vw, 84px); line-height: 1.12; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--white); }
 h1 span { 
   color: var(--lavender); 
   text-shadow: 
-    -1px -1px 0 var(--gold),  
-     1px -1px 0 var(--gold),
-    -1px  1px 0 var(--gold),
-     1px  1px 0 var(--gold),
-     0 0 25px var(--gold-glow);
+    -1px -1px 0 #bfa048,  
+     1px -1px 0 #bfa048,
+    -1px  1px 0 #bfa048,
+     1px  1px 0 #bfa048,
+     0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle { max-width: 580px; color: var(--muted); line-height: 2; font-size: 18px; font-style: italic; }
@@ -95,17 +106,17 @@ h1 span {
   border: 1px solid var(--gold);
   background: linear-gradient(135deg, #4d372f, #2b201c);
   color: var(--gold); border-radius: 4px; padding: 14px 26px; margin: 12px 6px;
-  box-shadow: 0 0 20px rgba(243, 212, 130, 0.15); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
   text-transform: uppercase; font: 12px "Times New Roman", serif; letter-spacing: 2px;
   transition: all .3s ease;
 }
-.button:hover { background: linear-gradient(135deg, #664a40, #42302a); color: var(--white); box-shadow: 0 0 30px var(--gold-glow); transform: translateY(-2px); }
-.button.secondary { background: transparent; border-color: rgba(243, 212, 130, 0.4); color: var(--muted); }
+.button:hover { background: linear-gradient(135deg, #664a40, #42302a); color: var(--white); box-shadow: 0 6px 15px var(--gold-shadow); transform: translateY(-2px); }
+.button.secondary { background: transparent; border-color: rgba(223, 179, 86, 0.5); color: var(--muted); }
 .button.secondary:hover { border-color: var(--gold); color: var(--gold); }
 
 .scroll-note { margin-top: 40px; color: var(--gold); font: 11px "Times New Roman", serif; letter-spacing: 3px; opacity: 0.8; }
 
-section { padding: 90px 20px; scroll-margin-top: 35px; }
+section { padding: 90px 20px; scroll-margin-top: 35px; position: relative; }
 .section-inner { max-width: 950px; margin: auto; }
 h2 { 
   font-size: clamp(32px, 5vw, 48px); 
@@ -114,17 +125,17 @@ h2 {
   font-family: "Baskerville", "Playfair Display", Georgia, serif; 
   color: var(--lavender);
   text-shadow: 
-    -1px -1px 0 var(--gold),  
-     1px -1px 0 var(--gold),
-    -1px  1px 0 var(--gold),
-     1px  1px 0 var(--gold),
-     0 0 20px var(--gold-glow);
+    -1px -1px 0 #bfa048,  
+     1px -1px 0 #bfa048,
+    -1px  1px 0 #bfa048,
+     1px  1px 0 #bfa048,
+     0 4px 8px rgba(0, 0, 0, 0.5);
 }
 .description { max-width: 620px; margin: 0 auto 35px; color: var(--muted); line-height: 2; font-size: 17px; }
 
 .soft-section {
   background: linear-gradient(180deg, #382924dd, #221815ee, #382924dd);
-  border-top: 1px solid rgba(243, 212, 130, 0.25); border-bottom: 1px solid rgba(243, 212, 130, 0.25);
+  border-top: 1px solid rgba(223, 179, 86, 0.3); border-bottom: 1px solid rgba(223, 179, 86, 0.3);
 }
 
 .gallery {
@@ -134,10 +145,10 @@ h2 {
 .photo-card {
   padding: 12px 12px 22px; background: rgba(66, 48, 42, 0.6); 
   border: 1px solid var(--gold);
-  border-radius: 4px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 4px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   transition: transform .3s, border-color .3s;
 }
-.photo-card:hover { transform: translateY(-6px); border-color: var(--lavender); box-shadow: 0 0 25px var(--gold-glow); }
+.photo-card:hover { transform: translateY(-6px); border-color: var(--lavender); box-shadow: 0 10px 25px var(--gold-shadow); }
 .photo-card img {
   display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
   background: #1f1714; border-radius: 2px; cursor: zoom-in;
@@ -148,7 +159,7 @@ h2 {
   max-width: 700px; margin: 30px auto; padding: clamp(28px, 5vw, 50px);
   border: 1px solid var(--gold); border-radius: 6px;
   background: linear-gradient(145deg, #3d2c26ee, #281d19ee);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.7), inset 0 0 30px rgba(243, 212, 130, 0.05); 
+  box-shadow: 0 15px 50px rgba(0,0,0,0.6); 
   text-align: left; line-height: 2.1; color: var(--white); font-size: 18px;
 }
 .letter-card p { margin: 0 0 20px; }
@@ -156,11 +167,11 @@ h2 {
 
 .love-languages { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 840px; margin: 30px auto; }
 .love-word {
-  padding: 10px 16px; border-radius: 3px; border: 1px solid rgba(243, 212, 130, 0.35);
+  padding: 10px 16px; border-radius: 3px; border: 1px solid rgba(223, 179, 86, 0.4);
   background: rgba(66, 48, 42, 0.5); color: var(--lavender); font-size: 15px;
   transition: all .25s;
 }
-.love-word:hover { background: rgba(243, 212, 130, 0.2); border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.love-word:hover { background: rgba(223, 179, 86, 0.2); border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
 .reason-box {
   max-width: 640px; min-height: 160px; padding: 35px 25px; margin: 25px auto;
@@ -170,18 +181,18 @@ h2 {
   color: var(--lavender); font-size: clamp(20px, 3vw, 26px); line-height: 1.9;
   font-family: "Baskerville", "Playfair Display", Georgia, serif;
   text-shadow: 
-    -1px -1px 0 var(--gold),  
-     1px -1px 0 var(--gold),
-    -1px  1px 0 var(--gold),
-     1px  1px 0 var(--gold);
-  box-shadow: 0 15px 45px rgba(0,0,0,0.6), inset 0 0 20px rgba(243, 212, 130, 0.05);
+    -1px -1px 0 #bfa048,  
+     1px -1px 0 #bfa048,
+    -1px  1px 0 #bfa048,
+     1px  1px 0 #bfa048;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
 }
 .reason-count { color: var(--gold); font: 12px "Times New Roman", serif; letter-spacing: 3px; text-transform: uppercase; }
 
 .final-note { padding: 100px 20px; background: radial-gradient(ellipse at center, rgba(89, 66, 57, 0.7), transparent 70%); }
-.final-note .big-heart { font-size: 56px; color: var(--gold); filter: drop-shadow(0 0 25px var(--gold-glow)); }
+.final-note .big-heart { font-size: 56px; color: var(--gold); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); }
 
-footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.25); color: var(--muted); font: 12px "Times New Roman", serif; letter-spacing: 1px; line-height: 2.2; background: #1f1714; }
+footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); color: var(--muted); font: 12px "Times New Roman", serif; letter-spacing: 1px; line-height: 2.2; background: #1f1714; }
 
 .heart {
   position: fixed; bottom: -40px; pointer-events: none; z-index: 10;
@@ -195,7 +206,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.25); co
   align-items: center; justify-content: center; flex-direction: column;
 }
 .viewer.open { display: flex; }
-.viewer img { max-width: 92%; max-height: 78vh; object-fit: contain; border: 2px solid var(--gold); border-radius: 4px; box-shadow: 0 0 40px var(--gold-glow); }
+.viewer img { max-width: 92%; max-height: 78vh; object-fit: contain; border: 2px solid var(--gold); border-radius: 4px; box-shadow: 0 0 30px rgba(140, 100, 30, 0.5); }
 .viewer button { margin-top: 20px; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -205,6 +216,14 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.25); co
 </head>
 <body>
 <div class="stars" aria-hidden="true"></div>
+
+<!-- Random Sunflower Decals placed around the layout -->
+<div class="sunflower-decal" style="top: 8vh; left: 6vw; transform: rotate(-15deg);">🌻</div>
+<div class="sunflower-decal" style="top: 18vh; right: 8vw; transform: rotate(25deg);">🌻</div>
+<div class="sunflower-decal" style="top: 45vh; left: 4vw; transform: rotate(10deg);">🌻</div>
+<div class="sunflower-decal" style="top: 60vh; right: 6vw; transform: rotate(-20deg);">🌻</div>
+<div class="sunflower-decal" style="top: 82vh; left: 10vw; transform: rotate(15deg);">🌻</div>
+
 <nav aria-label="Main navigation">
   <a href="#memories">Our Memories</a>
   <a href="#letter">Your Letter</a>
@@ -368,7 +387,7 @@ function hearts(count) {
     heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (16 + Math.random() * 20) + "px";
-    heart.style.color = ["#f3d482", "#d6cbff", "#fff8fc"][Math.floor(Math.random() * 3)];
+    heart.style.color = ["#dfb356", "#d6cbff", "#fff8fc"][Math.floor(Math.random() * 3)];
     heart.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 5200);
