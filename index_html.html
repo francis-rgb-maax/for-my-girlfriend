@@ -8,12 +8,12 @@
 
 <style>
 :root {
-  --night: #090e24;
-  --blue: #151e42;
-  --lavender: #bba9ff;
-  --pink: #ffb8d2;
-  --white: #fff8ff;
-  --muted: #c4c9e8;
+  --night: #080714;      /* Slightly deeper, richer cosmic night background */
+  --blue: #18143a;       /* Richer midnight indigo */
+  --lavender: #c9b6ff;   /* Brighter, more luminous lavender */
+  --pink: #f0c2ff;       /* Softened pink to blend with the purple tones */
+  --white: #fcfbff;
+  --muted: #d0c9f0;      /* Softer lavender-gray text */
 }
 
 * { box-sizing: border-box; }
@@ -100,24 +100,18 @@ nav a {
 nav a:hover { color: var(--pink); }
 
 .hero {
-  min-height: 100svh;
-  padding: 110px 20px 65px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background:
-    radial-gradient(ellipse at 50% 35%, #252b5b99, transparent 60%);
+  min-height: 100svh; padding: 110px 20px 65px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at 50% 35%, #3d2b6b99, transparent 65%);
 }
 
 .moon {
   font-size: clamp(65px, 12vw, 105px);
-  filter: drop-shadow(0 0 28px #d5c5ff88);
+  filter: drop-shadow(0 0 35px #b196ffaa); /* Deepened lavender glow */
   animation: moonGlow 4s ease-in-out infinite alternate;
 }
-
 @keyframes moonGlow {
-  to { filter: drop-shadow(0 0 48px #e0d1ffcc); }
+  to { filter: drop-shadow(0 0 55px #d4c4ffdd); }
 }
 
 .eyebrow {
