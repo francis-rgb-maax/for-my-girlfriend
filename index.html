@@ -29,7 +29,7 @@ body {
 button { font: inherit; cursor: pointer; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 
-/* Elegant shiny gold outlined lavender text */
+/* Metallic shiny gold outlined lavender text with 3D effect */
 .gold-outline-text {
   color: var(--lavender);
   text-shadow: 
@@ -37,7 +37,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-
      1px -1px 0 #bfa048,
     -1px  1px 0 #bfa048,
      1px  1px 0 #bfa048,
-     0 3px 6px rgba(0, 0, 0, 0.4);
+     0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Random Sunflower Decals in the background */
@@ -97,7 +97,7 @@ h1 span {
      1px -1px 0 #bfa048,
     -1px  1px 0 #bfa048,
      1px  1px 0 #bfa048,
-     0 4px 8px rgba(0, 0, 0, 0.5);
+     0 6px 12px rgba(0, 0, 0, 0.6);
 }
 
 .subtitle { max-width: 580px; color: var(--muted); line-height: 2; font-size: 18px; font-style: italic; }
@@ -426,16 +426,4 @@ music.addEventListener("ended", () => {
   musicButton.textContent = "♫ Play Our Anthem";
 });
 
-const lovePhrases = [
-  "I love you", "Ek het jou lief", "Te dua", "Ana behibak", "Yes kez sirumem", "M’bi fe", "Ami tomake bhalobashi", "Ya tabe kahayu", "Nahigugma ako kanimo", "Obicham te", "Soro lahn nhee ah", "T’estimo", "Tsi ge yu", "Ne mohotatse", "Ndimakukonda", "Ngo oiy ney a", "Wo ai ni", "U kamakutu nu", "Ti tengu caru", "Kisakihitin", "Mi aime jou", "Volim te", "Miluji te", "Jeg Elsker Dig", "Ik hou van jou", "Amin mela lle", "Mi amas vin", "Ma armastan sind", "Afgreki’", "Eg elski teg", "Doset daram", "Mahal kita", "Mina rakastan sinua", "Je t’aime", "Je t’adore", "Ik hald fan dy", "Ta gra agam ort", "Mikvarhar", "Ich liebe dich", "S’agapo", "Hoo thunay prem karoo choo", "Palangga ko ikaw", "Aloha Au Iabim ta", "Ljubim te", "Te quiero", "Ninapenda wewe", "Jag alskar dig", "Ich lieb Di", "Mi lobi joe", "Wa ga ei li", "Ua Here Vau Ia Oe", "Nan unnai kathalikaraen", "Nenu ninnu premistunnanu", "Phom rak khun", "Ha eh bak", "Seni Seviyorum", "Ya tebe kahayu", "Mai aap say pyaar karta hoo", "Anh yêu em", "‘Rwy’n dy garu di", "Ikh hob dikh", "Mo ni fe", "Ezhele hezdege", "Tom ho’ ichema"
-];
-const loveWords = document.getElementById("loveWords");
-lovePhrases.forEach(phrase => {
-  const word = document.createElement("span");
-  word.className = "love-word";
-  word.textContent = phrase;
-  loveWords.appendChild(word);
-});
-</script>
-</body>
-</html>
+const lovePhrases =
