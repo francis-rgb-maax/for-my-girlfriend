@@ -29,26 +29,15 @@ body {
 button { font: inherit; cursor: pointer; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 
-/* Metallic shiny gold outlined text style for headers */
-.gold-outline-text {
-  color: var(--lavender);
-  text-shadow: 
-    -1px -1px 0 #bfa048,  
-     1px -1px 0 #bfa048,
-    -1px  1px 0 #bfa048,
-     1px  1px 0 #bfa048,
-     0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Sunflower Sticker Decals */
+/* Sunflower Sticker Decals styled to pop against the dark brown background */
 .sunflower-decal {
   position: absolute;
-  width: 90px;
+  width: 100px;
   height: auto;
-  opacity: 0.85;
+  opacity: 0.95;
   pointer-events: none;
   z-index: 0;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 8px rgba(223, 179, 86, 0.3));
 }
 
 .stars, .stars::before, .stars::after {
