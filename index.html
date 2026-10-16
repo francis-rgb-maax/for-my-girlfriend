@@ -40,14 +40,15 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-
      0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Random Sunflower Decals in the background */
+/* Sunflower Sticker Decals */
 .sunflower-decal {
   position: absolute;
-  font-size: 28px;
-  opacity: 0.25;
+  width: 90px;
+  height: auto;
+  opacity: 0.85;
   pointer-events: none;
   z-index: 0;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
 }
 
 .stars, .stars::before, .stars::after {
@@ -89,7 +90,7 @@ nav a:hover { color: var(--lavender); text-shadow: 0 0 8px var(--gold-shadow); }
 @keyframes sunGlow { to { filter: drop-shadow(0 6px 12px rgba(140, 100, 30, 0.6)); } }
 
 .eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-h1 { font-weight: normal; font-size: clamp(42px, 9vw, 84px); line-height: 1.12; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--white); }
+h1 { font-weight: normal; font-size: clamp(36px, 7.5vw, 74px); line-height: 1.15; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--white); }
 h1 span { 
   color: var(--lavender); 
   text-shadow: 
@@ -217,12 +218,12 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); colo
 <body>
 <div class="stars" aria-hidden="true"></div>
 
-<!-- Random Sunflower Decals placed around the layout -->
-<div class="sunflower-decal" style="top: 8vh; left: 6vw; transform: rotate(-15deg);">🌻</div>
-<div class="sunflower-decal" style="top: 18vh; right: 8vw; transform: rotate(25deg);">🌻</div>
-<div class="sunflower-decal" style="top: 45vh; left: 4vw; transform: rotate(10deg);">🌻</div>
-<div class="sunflower-decal" style="top: 60vh; right: 6vw; transform: rotate(-20deg);">🌻</div>
-<div class="sunflower-decal" style="top: 82vh; left: 10vw; transform: rotate(15deg);">🌻</div>
+<!-- Sunflower Sticker Decals placed around the layout -->
+<img src="images/sunflower.png" class="sunflower-decal" style="top: 8vh; left: 5vw; transform: rotate(-15deg);" alt="">
+<img src="images/sunflower.png" class="sunflower-decal" style="top: 22vh; right: 6vw; transform: rotate(25deg);" alt="">
+<img src="images/sunflower.png" class="sunflower-decal" style="top: 48vh; left: 3vw; transform: rotate(10deg);" alt="">
+<img src="images/sunflower.png" class="sunflower-decal" style="top: 65vh; right: 5vw; transform: rotate(-20deg);" alt="">
+<img src="images/sunflower.png" class="sunflower-decal" style="top: 85vh; left: 8vw; transform: rotate(15deg);" alt="">
 
 <nav aria-label="Main navigation">
   <a href="#memories">Our Memories</a>
@@ -233,7 +234,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); colo
   <header class="hero">
     <div class="moon" aria-hidden="true">🌻</div>
     <p class="eyebrow">For the sunshine of my world</p>
-    <h1>Stacy Puello<br><span>Flores ♡</span></h1>
+    <h1>Stacy Puello <span class="gold-outline-text">Flores ♡</span></h1>
     <p class="subtitle">
       Mi Amor, wherever you turn your face, you bring warmth and light to everything around you just like a sunflower.
     </p>
@@ -426,4 +427,17 @@ music.addEventListener("ended", () => {
   musicButton.textContent = "♫ Play Our Anthem";
 });
 
-const lovePhrases =
+const lovePhrases = [
+  "I love you", "Ek het jou lief", "Te dua", "Ana behibak", "Yes kez sirumem", "M’bi fe", "Ami tomake bhalobashi", "Ya tabe kahayu", "Nahigugma ako kanimo", "Obicham te", "Soro lahn nhee ah", "T’estimo", "Tsi ge yu", "Ne mohotatse", "Ndimakukonda", "Ngo oiy ney a", "Wo ai ni", "U kamakutu nu", "Ti tengu caru", "Kisakihitin", "Mi aime jou", "Volim te", "Miluji te", "Jeg Elsker Dig", "Ik hou van jou", "Amin mela lle", "Mi amas vin", "Ma armastan sind", "Afgreki’", "Eg elski teg", "Doset daram", "Mahal kita", "Mina rakastan sinua", "Je t’aime", "Je t’adore", "Ik hald fan dy", "Ta gra agam ort", "Mikvarhar", "Ich liebe dich", "S’agapo", "Hoo thunay prem karoo choo", "Palangga ko ikaw", "Aloha Au Iabim ta", "Ljubim te", "Te quiero", "Ninapenda wewe", "Jag alskar dig", "Ich lieb Di", "Mi lobi joe", "Wa ga ei li", "Ua Here Vau Ia Oe", "Nan unnai kathalikaraen", "Nenu ninnu premistunnanu", "Phom rak khun", "Ha eh bak", "Seni Seviyorum", "Ya tebe kahayu", "Mai aap say pyaar karta hoo", "Anh yêu em", "‘Rwy’n dy garu di", "Ikh hob dikh", "Mo ni fe", "Ezhele hezdege", "Tom ho’ ichema"
+];
+const loveWords = document.getElementById("loveWords");
+loveWords.innerHTML = "";
+lovePhrases.forEach(phrase => {
+  const word = document.createElement("span");
+  word.className = "love-word";
+  word.textContent = phrase;
+  loveWords.appendChild(word);
+});
+</script>
+</body>
+</html>
