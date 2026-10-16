@@ -28,6 +28,17 @@ body {
 button { font: inherit; cursor: pointer; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 
+/* Gold outlined lavender text utility */
+.gold-outline-text {
+  color: var(--lavender);
+  text-shadow: 
+    -1px -1px 0 var(--gold),  
+     1px -1px 0 var(--gold),
+    -1px  1px 0 var(--gold),
+     1px  1px 0 var(--gold),
+     0 0 15px rgba(243, 212, 130, 0.5);
+}
+
 .stars, .stars::before, .stars::after {
   position: fixed; inset: 0; content: ""; pointer-events: none; z-index: 0;
   background-image: radial-gradient(2px 2px at 10% 20%, #f3d482 60%, transparent 100%), 
@@ -68,7 +79,15 @@ nav a:hover { color: var(--lavender); text-shadow: 0 0 10px var(--gold-glow); }
 
 .eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 0 12px rgba(243, 212, 130, 0.3); }
 h1 { font-weight: normal; font-size: clamp(42px, 9vw, 84px); line-height: 1.12; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--white); }
-h1 span { color: var(--gold); text-shadow: 0 0 25px var(--gold-glow); }
+h1 span { 
+  color: var(--lavender); 
+  text-shadow: 
+    -1px -1px 0 var(--gold),  
+     1px -1px 0 var(--gold),
+    -1px  1px 0 var(--gold),
+     1px  1px 0 var(--gold),
+     0 0 25px var(--gold-glow);
+}
 
 .subtitle { max-width: 580px; color: var(--muted); line-height: 2; font-size: 18px; font-style: italic; }
 
@@ -88,7 +107,19 @@ h1 span { color: var(--gold); text-shadow: 0 0 25px var(--gold-glow); }
 
 section { padding: 90px 20px; scroll-margin-top: 35px; }
 .section-inner { max-width: 950px; margin: auto; }
-h2 { font-size: clamp(32px, 5vw, 48px); font-weight: normal; margin: 14px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; color: var(--gold); }
+h2 { 
+  font-size: clamp(32px, 5vw, 48px); 
+  font-weight: normal; 
+  margin: 14px 0; 
+  font-family: "Baskerville", "Playfair Display", Georgia, serif; 
+  color: var(--lavender);
+  text-shadow: 
+    -1px -1px 0 var(--gold),  
+     1px -1px 0 var(--gold),
+    -1px  1px 0 var(--gold),
+     1px  1px 0 var(--gold),
+     0 0 20px var(--gold-glow);
+}
 .description { max-width: 620px; margin: 0 auto 35px; color: var(--muted); line-height: 2; font-size: 17px; }
 
 .soft-section {
@@ -136,8 +167,13 @@ h2 { font-size: clamp(32px, 5vw, 48px); font-weight: normal; margin: 14px 0; fon
   display: flex; align-items: center; justify-content: center;
   border: 1px solid var(--gold); border-radius: 6px;
   background: linear-gradient(135deg, #382924, #221815);
-  color: var(--white); font-size: clamp(20px, 3vw, 26px); line-height: 1.9;
+  color: var(--lavender); font-size: clamp(20px, 3vw, 26px); line-height: 1.9;
   font-family: "Baskerville", "Playfair Display", Georgia, serif;
+  text-shadow: 
+    -1px -1px 0 var(--gold),  
+     1px -1px 0 var(--gold),
+    -1px  1px 0 var(--gold),
+     1px  1px 0 var(--gold);
   box-shadow: 0 15px 45px rgba(0,0,0,0.6), inset 0 0 20px rgba(243, 212, 130, 0.05);
 }
 .reason-count { color: var(--gold); font: 12px "Times New Roman", serif; letter-spacing: 3px; text-transform: uppercase; }
@@ -270,7 +306,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.25); co
   <section class="final-note">
     <div class="big-heart" aria-hidden="true">🌻</div>
     <p class="eyebrow">To My Sunshine</p>
-    <h2>Beneath This Sky,<br>It Is Forever You.</h2>
+    <h2 class="gold-outline-text" style="display:inline-block; font-size:clamp(32px, 5vw, 48px); margin:14px 0;">Beneath This Sky,<br>It Is Forever You.</h2>
     <p class="description"> Of all the blooms in the garden, you are my favorite sight. Thank you for being part of my universe, Stacy. </p>
     <button class="button" onclick="hearts(35)"> Shower of Sunflowers & Gold ♡ </button>
   </section>
