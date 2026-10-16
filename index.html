@@ -29,7 +29,7 @@ body {
 button { font: inherit; cursor: pointer; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 
-/* Metallic shiny gold outlined lavender text with 3D effect */
+/* Metallic shiny gold outlined text style for headers */
 .gold-outline-text {
   color: var(--lavender);
   text-shadow: 
@@ -91,15 +91,6 @@ nav a:hover { color: var(--lavender); text-shadow: 0 0 8px var(--gold-shadow); }
 
 .eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
 h1 { font-weight: normal; font-size: clamp(36px, 7.5vw, 74px); line-height: 1.15; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--white); }
-h1 span { 
-  color: var(--lavender); 
-  text-shadow: 
-    -1px -1px 0 #bfa048,  
-     1px -1px 0 #bfa048,
-    -1px  1px 0 #bfa048,
-     1px  1px 0 #bfa048,
-     0 6px 12px rgba(0, 0, 0, 0.6);
-}
 
 .subtitle { max-width: 580px; color: var(--muted); line-height: 2; font-size: 18px; font-style: italic; }
 
@@ -234,7 +225,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(223, 179, 86, 0.3); colo
   <header class="hero">
     <div class="moon" aria-hidden="true">🌻</div>
     <p class="eyebrow">For the sunshine of my world</p>
-    <h1>Stacy Puello <span class="gold-outline-text">Flores ♡</span></h1>
+    <h1>Stacy Puello <span style="color: var(--lavender); text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);">Flores ♡</span></h1>
     <p class="subtitle">
       Mi Amor, wherever you turn your face, you bring warmth and light to everything around you just like a sunflower.
     </p>
