@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#2b090f">
-<title>For Stacy, My Royal Heart ♡</title>
+<meta name="theme-color" content="#2b201c">
+<title>For Stacy, My Sunlit Heart ♡</title>
 <style>
 :root {
-  --regal-red: #2b090f;
-  --crimson: #4a121d;
+  --brown: #2b201c;
+  --cocoa: #42302a;
   --lavender: #d6cbff;
   --gold: #f3d482;
   --gold-glow: rgba(243, 212, 130, 0.4);
   --white: #fff8fc;
-  --muted: #e2d1d6;
+  --muted: #e6dfec;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--regal-red);
+  background: var(--brown);
   color: var(--white);
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   text-align: center;
@@ -31,23 +31,23 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-
 .stars, .stars::before, .stars::after {
   position: fixed; inset: 0; content: ""; pointer-events: none; z-index: 0;
   background-image: radial-gradient(2px 2px at 10% 20%, #f3d482 60%, transparent 100%), 
-                    radial-gradient(1px 1px at 80% 30%, #fff 50%, transparent 100%), 
-                    radial-gradient(2px 2px at 40% 70%, #d6cbff 50%, transparent 100%), 
-                    radial-gradient(1px 1px at 60% 15%, #f3d482 50%, transparent 100%), 
+                    radial-gradient(1px 1px at 80% 30%, #d6cbff 50%, transparent 100%), 
+                    radial-gradient(2px 2px at 40% 70%, #f3d482 50%, transparent 100%), 
+                    radial-gradient(1px 1px at 60% 15%, #d6cbff 50%, transparent 100%), 
                     radial-gradient(2px 2px at 90% 80%, #ffcce2 50%, transparent 100%);
   background-size: 310px 290px;
   animation: twinkle 5s ease-in-out infinite alternate;
 }
-.stars::before { background-size: 230px 240px; opacity: .5; transform: rotate(20deg); animation-delay: -2s; }
-.stars::after { background-size: 370px 330px; opacity: .4; animation-delay: -4s; }
-@keyframes twinkle { from { opacity: .3; } to { opacity: .9; } }
+.stars::before { background-size: 230px 240px; opacity: .4; transform: rotate(20deg); animation-delay: -2s; }
+.stars::after { background-size: 370px 330px; opacity: .3; animation-delay: -4s; }
+@keyframes twinkle { from { opacity: .2; } to { opacity: .8; } }
 
 main, footer, nav { position: relative; z-index: 1; }
 nav {
   position: absolute; top: 0; width: 100%; padding: 25px 15px;
   display: flex; justify-content: center; gap: clamp(15px, 4vw, 38px); flex-wrap: wrap;
   border-bottom: 1px solid rgba(243, 212, 130, 0.25);
-  background: rgba(43, 9, 15, 0.85);
+  background: rgba(43, 32, 28, 0.85);
   backdrop-filter: blur(8px);
 }
 nav a { color: var(--gold); text-decoration: none; font: 11px "Times New Roman", serif; letter-spacing: 2px; text-transform: uppercase; }
@@ -56,15 +56,15 @@ nav a:hover { color: var(--lavender); text-shadow: 0 0 10px var(--gold-glow); }
 .hero {
   min-height: 100svh; padding: 120px 20px 65px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: radial-gradient(ellipse at 50% 35%, #5c1423cc, transparent 65%);
+  background: radial-gradient(ellipse at 50% 35%, #594239bb, transparent 65%);
 }
 .moon {
   font-size: clamp(65px, 12vw, 105px);
   color: var(--gold);
   filter: drop-shadow(0 0 35px var(--gold-glow));
-  animation: crownGlow 4s ease-in-out infinite alternate;
+  animation: sunGlow 4s ease-in-out infinite alternate;
 }
-@keyframes crownGlow { to { filter: drop-shadow(0 0 55px rgba(243, 212, 130, 0.8)); } }
+@keyframes sunGlow { to { filter: drop-shadow(0 0 55px rgba(243, 212, 130, 0.8)); } }
 
 .eyebrow { color: var(--gold); font: 12px "Times New Roman", serif; text-transform: uppercase; letter-spacing: 5px; line-height: 1.8; text-shadow: 0 0 12px rgba(243, 212, 130, 0.3); }
 h1 { font-weight: normal; font-size: clamp(42px, 9vw, 84px); line-height: 1.12; margin: 18px 0; font-family: "Baskerville", "Playfair Display", Georgia, serif; letter-spacing: 1px; color: var(--white); }
@@ -74,13 +74,13 @@ h1 span { color: var(--gold); text-shadow: 0 0 25px var(--gold-glow); }
 
 .button {
   border: 1px solid var(--gold);
-  background: linear-gradient(135deg, #5c1222, #380a15);
+  background: linear-gradient(135deg, #4d372f, #2b201c);
   color: var(--gold); border-radius: 4px; padding: 14px 26px; margin: 12px 6px;
   box-shadow: 0 0 20px rgba(243, 212, 130, 0.15); 
   text-transform: uppercase; font: 12px "Times New Roman", serif; letter-spacing: 2px;
   transition: all .3s ease;
 }
-.button:hover { background: linear-gradient(135deg, #78192e, #4a121d); color: var(--white); box-shadow: 0 0 30px var(--gold-glow); transform: translateY(-2px); }
+.button:hover { background: linear-gradient(135deg, #664a40, #42302a); color: var(--white); box-shadow: 0 0 30px var(--gold-glow); transform: translateY(-2px); }
 .button.secondary { background: transparent; border-color: rgba(243, 212, 130, 0.4); color: var(--muted); }
 .button.secondary:hover { border-color: var(--gold); color: var(--gold); }
 
@@ -92,8 +92,8 @@ h2 { font-size: clamp(32px, 5vw, 48px); font-weight: normal; margin: 14px 0; fon
 .description { max-width: 620px; margin: 0 auto 35px; color: var(--muted); line-height: 2; font-size: 17px; }
 
 .soft-section {
-  background: linear-gradient(180deg, #380c15dd, #22050bee, #380c15dd);
-  border-top: 1px solid rgba(243, 212, 130, 0.2); border-bottom: 1px solid rgba(243, 212, 130, 0.2);
+  background: linear-gradient(180deg, #382924dd, #221815ee, #382924dd);
+  border-top: 1px solid rgba(243, 212, 130, 0.25); border-bottom: 1px solid rgba(243, 212, 130, 0.25);
 }
 
 .gallery {
@@ -101,22 +101,22 @@ h2 { font-size: clamp(32px, 5vw, 48px); font-weight: normal; margin: 14px 0; fon
   gap: 24px; margin-top: 35px;
 }
 .photo-card {
-  padding: 12px 12px 22px; background: rgba(74, 18, 29, 0.6); 
-  border: 1px solid rgba(243, 212, 130, 0.35);
+  padding: 12px 12px 22px; background: rgba(66, 48, 42, 0.6); 
+  border: 1px solid var(--gold);
   border-radius: 4px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
   transition: transform .3s, border-color .3s;
 }
-.photo-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 0 25px var(--gold-glow); }
+.photo-card:hover { transform: translateY(-6px); border-color: var(--lavender); box-shadow: 0 0 25px var(--gold-glow); }
 .photo-card img {
   display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
-  background: #1f0409; border-radius: 2px; cursor: zoom-in;
+  background: #1f1714; border-radius: 2px; cursor: zoom-in;
 }
 .photo-caption { margin: 16px 4px 0; color: var(--lavender); font-size: 16px; font-style: italic; }
 
 .letter-card {
   max-width: 700px; margin: 30px auto; padding: clamp(28px, 5vw, 50px);
   border: 1px solid var(--gold); border-radius: 6px;
-  background: linear-gradient(145deg, #3d0e19ee, #26070fee);
+  background: linear-gradient(145deg, #3d2c26ee, #281d19ee);
   box-shadow: 0 20px 60px rgba(0,0,0,0.7), inset 0 0 30px rgba(243, 212, 130, 0.05); 
   text-align: left; line-height: 2.1; color: var(--white); font-size: 18px;
 }
@@ -125,8 +125,8 @@ h2 { font-size: clamp(32px, 5vw, 48px); font-weight: normal; margin: 14px 0; fon
 
 .love-languages { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 840px; margin: 30px auto; }
 .love-word {
-  padding: 10px 16px; border-radius: 3px; border: 1px solid rgba(243, 212, 130, 0.3);
-  background: rgba(74, 18, 29, 0.5); color: var(--lavender); font-size: 15px;
+  padding: 10px 16px; border-radius: 3px; border: 1px solid rgba(243, 212, 130, 0.35);
+  background: rgba(66, 48, 42, 0.5); color: var(--lavender); font-size: 15px;
   transition: all .25s;
 }
 .love-word:hover { background: rgba(243, 212, 130, 0.2); border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
@@ -135,17 +135,17 @@ h2 { font-size: clamp(32px, 5vw, 48px); font-weight: normal; margin: 14px 0; fon
   max-width: 640px; min-height: 160px; padding: 35px 25px; margin: 25px auto;
   display: flex; align-items: center; justify-content: center;
   border: 1px solid var(--gold); border-radius: 6px;
-  background: linear-gradient(135deg, #380c15, #22050b);
+  background: linear-gradient(135deg, #382924, #221815);
   color: var(--white); font-size: clamp(20px, 3vw, 26px); line-height: 1.9;
   font-family: "Baskerville", "Playfair Display", Georgia, serif;
   box-shadow: 0 15px 45px rgba(0,0,0,0.6), inset 0 0 20px rgba(243, 212, 130, 0.05);
 }
 .reason-count { color: var(--gold); font: 12px "Times New Roman", serif; letter-spacing: 3px; text-transform: uppercase; }
 
-.final-note { padding: 100px 20px; background: radial-gradient(ellipse at center, rgba(92, 20, 35, 0.7), transparent 70%); }
+.final-note { padding: 100px 20px; background: radial-gradient(ellipse at center, rgba(89, 66, 57, 0.7), transparent 70%); }
 .final-note .big-heart { font-size: 56px; color: var(--gold); filter: drop-shadow(0 0 25px var(--gold-glow)); }
 
-footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.2); color: var(--muted); font: 12px "Times New Roman", serif; letter-spacing: 1px; line-height: 2.2; background: #1f0409; }
+footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.25); color: var(--muted); font: 12px "Times New Roman", serif; letter-spacing: 1px; line-height: 2.2; background: #1f1714; }
 
 .heart {
   position: fixed; bottom: -40px; pointer-events: none; z-index: 10;
@@ -155,7 +155,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.2); col
 
 .viewer {
   display: none; position: fixed; inset: 0; z-index: 30;
-  background: rgba(27, 4, 9, 0.96); padding: 20px;
+  background: rgba(31, 23, 20, 0.96); padding: 20px;
   align-items: center; justify-content: center; flex-direction: column;
 }
 .viewer.open { display: flex; }
@@ -176,37 +176,37 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.2); col
 </nav>
 <main>
   <header class="hero">
-    <div class="moon" aria-hidden="true">👑</div>
-    <p class="eyebrow">Dedicated to the queen of my heart</p>
+    <div class="moon" aria-hidden="true">🌻</div>
+    <p class="eyebrow">For the sunshine of my world</p>
     <h1>Stacy Puello<br><span>Flores ♡</span></h1>
     <p class="subtitle">
-      Mi Amor, if all the stars in the cosmos bowed before you, they still could not match the brilliance of your soul.
+      Mi Amor, wherever you turn your face, you bring warmth and light to everything around you just like a sunflower.
     </p>
-    <p style="color:var(--lavender); font-size:20px; font-style:italic; margin-top:10px;">You are my sovereign magic.</p>
-    <button class="button" onclick="startSurprise()"> Enter Our Royal Realm ✨ </button>
+    <p style="color:var(--lavender); font-size:20px; font-style:italic; margin-top:10px;">You are my brightest garden.</p>
+    <button class="button" onclick="startSurprise()"> Open Our Sunflower Sanctuary ✨ </button>
     <button class="button secondary" onclick="toggleMusic()" id="musicButton"> ♫ Play Our Anthem </button>
-    <p class="scroll-note">A SANCTUARY BUILT FOR YOU ↓</p>
+    <p class="scroll-note">BUILT FOR YOU WITH LOVE ↓</p>
   </header>
 
   <section class="soft-section" id="memories">
     <div class="section-inner">
-      <p class="eyebrow">Treasured Chronicles</p>
-      <h2>Our Royal Gallery 📸</h2>
+      <p class="eyebrow">Blooms of Time</p>
+      <h2>Our Sunflower Gallery 🌻</h2>
       <p class="description">
-        Across time and space, every single moment spent in your presence is a crown jewel I hold closest to my heart.
+        Every cherished memory with you is like a blossom reaching toward the light. Here are our favorite moments.
       </p>
       <div class="gallery">
         <div class="photo-card">
           <img src="images/photo1.jpg" alt="Our first favorite memory" onclick="viewPhoto(this)" onerror="this.onerror=null; this.alt='Add your photo at images/photo1.jpg'; this.style.opacity='.15';">
-          <p class="photo-caption">A treasured moment ♡</p>
+          <p class="photo-caption">A golden memory 🌻</p>
         </div>
         <div class="photo-card">
           <img src="images/photo2.jpg" alt="A special moment together" onclick="viewPhoto(this)" onerror="this.onerror=null; this.alt='Add your photo at images/photo2.jpg'; this.style.opacity='.15';">
-          <p class="photo-caption">My royal grace 🌙</p>
+          <p class="photo-caption">My radiant grace 🌙</p>
         </div>
         <div class="photo-card">
           <img src="images/photo3.jpg" alt="A happy day together" onclick="viewPhoto(this)" onerror="this.onerror=null; this.alt='Add your photo at images/photo3.jpg'; this.style.opacity='.15';">
-          <p class="photo-caption">Perfect harmony ✨</p>
+          <p class="photo-caption">Pure sunshine ✨</p>
         </div>
         <div class="photo-card">
           <img src="images/photo4.jpg" alt="A special memory together" onclick="viewPhoto(this)" onerror="this.onerror=null; this.alt='Add your photo at images/photo4.jpg'; this.style.opacity='.15';">
@@ -214,7 +214,7 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.2); col
         </div>
         <div class="photo-card">
           <img src="images/photo5.jpg" alt="My beautiful love" onclick="viewPhoto(this)" onerror="this.onerror=null; this.alt='Add your photo at images/photo5.jpg'; this.style.opacity='.15';">
-          <p class="photo-caption">My absolute everything 👑</p>
+          <p class="photo-caption">My absolute everything 🌻</p>
         </div>
       </div>
     </div>
@@ -222,23 +222,23 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.2); col
 
   <section id="letter">
     <div class="section-inner">
-      <p class="eyebrow">An Ode From My Soul</p>
+      <p class="eyebrow">A Note From My Heart</p>
       <h2>A Letter for Mi Amor 💌</h2>
-      <p class="description"> Some devotions are too profound for everyday speech. Unseal this when your heart is ready. </p>
+      <p class="description"> Some feelings are too deep for ordinary words. Unseal this when your heart is ready. </p>
       <button class="button" id="letterButton" onclick="toggleLetter()"> Unseal Your Letter ♡ </button>
       <article class="letter-card hidden" id="loveLetter">
-        <p>To my magnificent Stacy, my Mi Amor,</p>
+        <p>To my wonderful Stacy, my Mi Amor,</p>
         <p>
-          I crafted this sanctuary in the stars exclusively for you—a testament to how deeply cherished you are. No calendar date or holiday is required to celebrate your existence; loving you is an honor woven into every single day.
+          I built this little corner of the web just for you, styled in warm brown, dreamy lavender, and gold, adorned with sunflowers because you bring absolute light into my days. No special occasion is needed to celebrate how much you mean to me.
         </p>
         <p>
-          Whenever shadows fall or the world grows heavy, let this place remind you of your absolute radiance. You possess a rare, magnificent light that elevates everything around you.
+          Whenever things get heavy or you need a reminder of how cherished you are, I hope this space reminds you of your radiant spirit. You make life so much brighter.
         </p>
         <p>
-          Words can scarcely capture the depth of my devotion. Though a single tongue falls short, I have gathered phrases from all corners of the globe to echo the very same truth: that you are adored beyond measure.
+          Words can barely capture the depth of my affection. Though one language could never be enough, I've gathered phrases from across the world to say it in every way possible: you are deeply loved.
         </p>
         <p>
-          Thank you for simply being Stacy. Thank you for being my Mi Amor. May our journey continue to flourish with infinite laughter, shared dreams, and unbreakable grace.
+          Thank you for being Stacy. Thank you for being my Mi Amor. May we continue to grow, laugh, and share countless golden moments together.
         </p>
         <p> Forever yours, </p>
         <p style="color:var(--gold); font-family:'Baskerville', serif; font-size:22px;">Your Francis ✨</p>
@@ -250,9 +250,9 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.2); col
     <div class="section-inner">
       <p class="eyebrow">A Universal Declaration</p>
       <h2>I Love You, Mi Amor 🌎</h2>
-      <p class="description"> Spoken in a myriad of tongues across empires and ages, yet every single syllable is meant for you alone, Stacy. </p>
+      <p class="description"> Spoken in countless languages across the globe, yet every single word is meant for you alone, Stacy. </p>
       <div class="love-languages" id="loveWords"></div>
-      <p style="color:var(--gold); font-size:20px; font-style:italic; line-height:1.8; margin-top:20px;"> Countless languages. One sovereign heart. Yours. ♡ </p>
+      <p style="color:var(--gold); font-size:20px; font-style:italic; line-height:1.8; margin-top:20px;"> Countless languages. One heart. Yours. ♡ </p>
     </div>
   </section>
 
@@ -260,28 +260,28 @@ footer { padding: 35px 15px; border-top: 1px solid rgba(243, 212, 130, 0.2); col
     <div class="section-inner">
       <p class="eyebrow">Endless Devotion</p>
       <h2>Reasons Why I Adore You 💗</h2>
-      <p class="description"> The list is boundless, but let these truths serve as your daily reminder. </p>
-      <div class="reason-box" id="reasonBox" aria-live="polite"> I love you because you are uniquely, magnificently you. ♡ </div>
+      <p class="description"> The list is endless, but let these serve as your daily reminder. </p>
+      <div class="reason-box" id="reasonBox" aria-live="polite"> I love you because you bring warmth and sunshine everywhere you go. ♡ </div>
       <p class="reason-count" id="reasonCount">REASON 1 OF 12</p>
-      <button class="button" onclick="nextReason()"> Reveal Another Truth ✨ </button>
+      <button class="button" onclick="nextReason()"> Reveal Another Reason 🌻 </button>
     </div>
   </section>
 
   <section class="final-note">
-    <div class="big-heart" aria-hidden="true">❦</div>
-    <p class="eyebrow">To My Sovereign Love</p>
-    <h2>Beneath This Realm,<br>It Is Forever You.</h2>
-    <p class="description"> Of all the wonders the universe holds, you remain the sole horizon I wish to gaze upon for all eternity. Thank you for being my reality, Stacy. </p>
-    <button class="button" onclick="hearts(35)"> Summon A Shower of Gold & Stars ♡ </button>
+    <div class="big-heart" aria-hidden="true">🌻</div>
+    <p class="eyebrow">To My Sunshine</p>
+    <h2>Beneath This Sky,<br>It Is Forever You.</h2>
+    <p class="description"> Of all the blooms in the garden, you are my favorite sight. Thank you for being part of my universe, Stacy. </p>
+    <button class="button" onclick="hearts(35)"> Shower of Sunflowers & Gold ♡ </button>
   </section>
 </main>
 
 <footer>
-  Dedicated to Stacy Puello Flores, with absolute devotion. 👑 <br>Mi Amor, yesterday, today, and across all tomorrow's.
+  Dedicated to Stacy Puello Flores, with all my love. 🌻 <br>Mi Amor, today and on every ordinary day, too.
 </footer>
 
 <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Photo viewer" onclick="closePhoto()">
-  <img id="largePhoto" src="" alt="A royal memory together">
+  <img id="largePhoto" src="" alt="A memory together">
   <button class="button secondary">Close View ✕</button>
 </div>
 
@@ -304,18 +304,18 @@ function toggleLetter() {
   }
 }
 const reasons = [
-  "I love you because you are uniquely, magnificently you. ♡",
+  "I love you because you bring warmth and sunshine everywhere you go. ♡",
   "I love the quiet magic of building our future memories together.",
-  "I love that your soul is completely one of a kind.",
+  "I love that your soul is completely bright and one of a kind.",
   "I love the intricate details that make you who you are.",
   "I love discovering new depths of your brilliant mind each day.",
-  "I love that you are the sole inspiration for this universe I built.",
+  "I love that you are the sole inspiration for this sunflower universe.",
   "I love anticipating all the grand adventures awaiting us.",
   "I love celebrating your presence even on ordinary, quiet days.",
-  "I love the divine grace woven into your name: Stacy Puello Flores.",
+  "I love the beautiful grace woven into your name: Stacy Puello Flores.",
   "I love you in every language, yet words will never quite suffice.",
   "I love the sound of your laughter echoing against the world's noise.",
-  "I love you because choosing you is my greatest honor."
+  "I love you because choosing you is my greatest joy."
 ];
 let reasonIndex = 0;
 function nextReason() {
@@ -325,13 +325,13 @@ function nextReason() {
   hearts(5);
 }
 function hearts(count) {
-  const symbols = ["♡", "♥", "👑", "✨", "✦"];
+  const symbols = ["🌻", "💛", "✨", "🌻", "♡"];
   for (let i = 0; i < count; i++) {
     const heart = document.createElement("span");
     heart.className = "heart";
     heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.fontSize = (16 + Math.random() * 20) + "px";
     heart.style.color = ["#f3d482", "#d6cbff", "#fff8fc"][Math.floor(Math.random() * 3)];
     heart.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
     document.body.appendChild(heart);
