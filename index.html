@@ -651,4 +651,255 @@ function toggleSecondLetter() {
   button.textContent = isOpening ? "Close your second letter ♡" : "Open your second letter ♡";
 
   if (isOpening) {
-    letter.scrollIntoView({ behavior: "smooth", block
+    letter.scrollIntoView({ behavior: "smooth", block: "center" });
+    hearts(12);
+  }
+}
+
+const reasons = [
+  "I love you because you are uniquely, beautifully you. ♡",
+  "I love your smile when you're nervous and happy.",
+  "I love the thought of making more memories with you.",
+  "I love your voice.",
+  "I love that no one else could ever be exactly who you are or even like you.",
+  "I love how understanding you are.",
+  "I love getting to know you more, one day at a time.",
+  "I love how patient you are.",
+  "I love how every time I'm with you it's always a good time.",
+  "I love that you are the person I wanted to make this little universe for.",
+  "I love that your name has a special place in my heart: Stacy Puello Flores.",
+  "I love you in more words than I can count, and still none feels like enough.",
+  "I love the moments when we laugh and forget about everything else.",
+  "I love you because loving you is something I want to celebrate everyday.",
+  "I love how you make me feel wanted.",
+  "I love how you make me feel important.",
+  "I love how you make me feel beautiful without saying a word.",
+  "I love how you make me feel like I matter.",
+  "I love that you accept who I am 100%.",
+  "I love that you let me be completely myself when I am with you.",
+  "I love how you make me feel cherished and adored.",
+  "I love how you make ordinary days feel special.",
+  "I love the way you bring peace to my chaos.",
+  "I love how your smile melts me.",
+  "I love how your laugh sounds like home.",
+  "I love that you have the softest heart.",
+  "I love how you make me smile randomly just by thinking of you.",
+  "I love how when we are together, all my problems disappear.",
+  "I love that you make my heart smile.",
+  "I love that I miss you... even when you are just in the next room.",
+  "I love that you encourage me to find more of myself.",
+  "I love how truthful and vulnerable you are with me.",
+  "I love how you encourage me after I feel like I have failed.",
+  "I love how you make me feel like I can get through anything, as long as I have you.",
+  "I love how hard you work and sacrifice, without even realizing you are doing it.",
+  "I love how you love my family, even when they are crazy and annoying.",
+  "I love that you are always pushing me to be better and cheering me on as my biggest fan.",
+  "I love you because I simply cannot imagine my life without you.",
+  "I love that you know the secret, little things that cheer me up and make me happy.",
+  "I love how you still give me butterflies.",
+  "I love how your kisses make me weak in the knees.",
+  "I love how you play with your hair when you are nervous.",
+  "I love how when you are really happy, you either turn away or get cute aggression.",
+  "I love what a genuinely beautiful soul you have.",
+  "I love that you are an absolute baddie.",
+  "I love how you are always moving forward and pushing ahead.",
+  "I love how you act like you love going out, even though you are really a homebody at heart.",
+  "I love how being with you just feels so completely natural.",
+  "I love the way you speak - honestly, the way you talk could turn water hot.",
+  "I love that your music taste is so amazing and broad.",
+  "I love how big you are on health and taking care of yourself.",
+  "I love how capable you are, even when I just want to step in and help take care of you.",
+  "I love how effortlessly funny you are.",
+  "I love how extremely smart you are.",
+  "I love how you use your degree in everyday life so naturally - sweeping everyone off their feet before they even realize it.",
+  "I love the adorable way you get shy or turn away when you are overflowing with happiness.",
+  "I love the quiet moments when we are just staying in at home together.",
+  "I love how confident and stunning you carry yourself in every single room.",
+  "I love the depth and kindness behind your beautiful soul.",
+  "I love how driven you are and how you never stop moving forward.",
+  "I love how easy and comfortable it feels just existing right next to you.",
+  "I love listening to you talk about anything and everything.",
+  "I love sharing songs and discovering music with someone who has such great taste.",
+  "I love your dedication to your health and wellness.",
+  "I love watching your brilliant mind at work when you use your knowledge every day.",
+  "I love how sharp, quick-witted, and hilarious you are.",
+  "I love that you do not even realize how brilliant you are until it just naturally shines through.",
+  "I love how you let me help you carry things, even when you are strong enough to do it all on your own.",
+  "I love the little nervous habits that make you uniquely, perfectly you.",
+  "I love how you can go from being a total baddie to the coziest homebody.",
+  "I love how your ambition inspires me to keep moving forward too.",
+  "I love the way your mind works and how naturally smart you are.",
+  "I love how every conversation with you keeps me completely hooked.",
+  "I love how beautifully your inner soul matches your outer beauty.",
+  "I love that no matter what kind of day it is, being with you feels completely right.",
+  "I love just getting to know more of the incredible person you are every single day.",
+  "I love how much you love to dance.",
+  "I love that you watch a ridiculous amount of brainrot with me.",
+  "I love how radically honest you always are.",
+  "I love how drop-dead sexy you are in every way.",
+  "I love how innovative and creative your mind is.",
+  "I love the way you make me feel when you speak Spanish to me.",
+  "I love how amazing you smell all the time.",
+  "I love watching you move and groove whenever you dance.",
+  "I love sharing our silly, goofy brainrot moments together.",
+  "I love that I never have to guess what is on your mind because you are always completely honest.",
+  "I love how effortlessly gorgeous and sexy you are, whether you are dressed up or in cozy loungewear.",
+  "I love how your brilliant mind is always coming up with innovative ideas.",
+  "I love how the sound of you speaking Spanish gives me butterflies every single time.",
+  "I love walking into a room and catching your scent because you always smell incredible.",
+  "I love how fun and lively you make life feel when you are dancing around.",
+  "I love how we can laugh at the most random internet brainrot and just be ourselves.",
+  "I love your absolute authenticity and brutal honesty.",
+  "I love how captivating and attractive you are to me inside and out.",
+  "I love how smart and innovative you are when solving problems.",
+  "I love how effortlessly sexy it is when you switch over to Spanish.",
+  "I love how your signature scent instantly makes me feel like I am home.",
+  "I love how your passion for dancing lights up the whole room.",
+  "I love our inside jokes from all the brainrot we watch.",
+  "I love how your honest words always ground me.",
+  "I love how breathtaking you look without even trying.",
+  "I love how inventive and forward-thinking you are."
+];
+
+let reasonIndex = 0;
+
+function nextReason() {
+  reasonIndex = (reasonIndex + 1) % reasons.length;
+  document.getElementById("reasonBox").textContent = reasons[reasonIndex];
+  document.getElementById("reasonCount").textContent =
+    "REASON " + (reasonIndex + 1) + " OF " + reasons.length;
+  hearts(5);
+}
+
+function hearts(count) {
+  const symbols = ["♡", "♥", "🌻", "✨", "💖"];
+
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement("span");
+    heart.className = "heart";
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.color = ["#dfb356", "#d6cbff", "#fff0fa"][
+      Math.floor(Math.random() * 3)
+    ];
+    heart.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5200);
+  }
+}
+
+function viewPhoto(img) {
+  if (!img.complete || !img.naturalWidth) return;
+  document.getElementById("largePhoto").src = img.src;
+  document.getElementById("viewer").classList.add("open");
+}
+
+function closePhoto() {
+  document.getElementById("viewer").classList.remove("open");
+}
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closePhoto();
+});
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+async function toggleMusic() {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicButton.textContent = "♫ Pause our music";
+    } catch (error) {
+      musicButton.textContent = "Add music.mp3 first ♡";
+    }
+  } else {
+    music.pause();
+    musicButton.textContent = "♫ Play our music";
+  }
+}
+
+music.addEventListener("ended", () => {
+  musicButton.textContent = "♫ Play our music";
+});
+
+const lovePhrases = [
+  "I love you",
+  "Ek het jou lief",
+  "Te dua",
+  "Ana behibak",
+  "Ana behibek",
+  "Yes kez sirumem",
+  "M’bi fe",
+  "Ami tomake bhalobashi",
+  "Ya tabe kahayu",
+  "Nahigugma ako kanimo",
+  "Obicham te",
+  "Soro lahn nhee ah",
+  "T’estimo",
+  "Tsi ge yu",
+  "Ne mohotatse",
+  "Ndimakukonda",
+  "Ngo oiy ney a",
+  "Wo ai ni",
+  "U kamakutu nu",
+  "Ti tengu caru",
+  "Kisakihitin",
+  "Mi aime jou",
+  "Volim te",
+  "Miluji te",
+  "Jeg Elsker Dig",
+  "Ik hou van jou",
+  "Amin mela lle",
+  "Mi amas vin",
+  "Ma armastan sind",
+  "Afgreki’",
+  "Eg elski teg",
+  "Doset daram",
+  "Mahal kita",
+  "Mina rakastan sinua",
+  "Je t’aime",
+  "Je t’adore",
+  "Ik hald fan dy",
+  "Ta gra agam ort",
+  "Mikvarhar",
+  "Ich liebe dich",
+  "S’agapo",
+  "Hoo thunay prem karoo choo",
+  "Palangga ko ikaw",
+  "Aloha Au Iabim ta",
+  "Ljubim te",
+  "Te quiero",
+  "Ninapenda wewe",
+  "Jag alskar dig",
+  "Ich lieb Di",
+  "Mi lobi joe",
+  "Wa ga ei li",
+  "Ua Here Vau Ia Oe",
+  "Nan unnai kathalikaraen",
+  "Nenu ninnu premistunnanu",
+  "Phom rak khun",
+  "Ha eh bak",
+  "Seni Seviyorum",
+  "Ya tebe kahayu",
+  "Mai aap say pyaar karta hoo",
+  "Anh yêu em",
+  "‘Rwy’n dy garu di",
+  "Ikh hob dikh",
+  "Mo ni fe",
+  "Ezhele hezdege",
+  "Tom ho’ ichema"
+];
+
+const loveWords = document.getElementById("loveWords");
+
+lovePhrases.forEach(phrase => {
+  const word = document.createElement("span");
+  word.className = "love-word";
+  word.textContent = phrase;
+  loveWords.appendChild(word);
+});
+</script>
+</body>
+</html>
